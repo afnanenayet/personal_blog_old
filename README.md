@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/afnanenayet/personal_blog.svg?branch=master)](https://travis-ci.org/afnanenayet/personal_blog)
 # Personal website
 This is my personal website 
 
