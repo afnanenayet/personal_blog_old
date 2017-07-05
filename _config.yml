@@ -32,3 +32,11 @@ theme_color: red
 # Build settings
 markdown: kramdown
 
+# Settings for GAE
+# Insert your configuration here or within _app.yaml
+# You need to specify a runtime for App Engine
+app_engine:
+  runtime: go
+  api_version: go1
+  default_expiration: 300s
+
