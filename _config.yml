@@ -17,7 +17,6 @@ title: Afnan Enayet
 description: A personal website
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "afnanenayet.com" # the base hostname & protocol for your site, e.g. http://example.com
-github_repo: personal_website # the GitHub repo name for your project
 github_username: afnanenayet
 
 # Optional social link, you can choose from the following options:
