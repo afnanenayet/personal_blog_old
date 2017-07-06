@@ -42,4 +42,3 @@ handlers:
   - url: "/thumbnail.png"
     static_files: _site/thumbnail.png
     upload: _site/thumbnail.png
-
