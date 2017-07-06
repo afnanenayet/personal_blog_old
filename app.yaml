@@ -3,42 +3,42 @@ runtime: go
 api_version: go1
 default_expiration: 300s
 handlers:
-- url: "/about/"
-  static_files: _site/about/index.html
-  upload: _site/about/index.html
-- url: "/"
-  static_files: _site/index.html
-  upload: _site/index.html
-- url: "/assets/style.css"
-  static_files: _site/assets/style.css
-  upload: _site/assets/style.css
-- url: "/posts/"
-  static_files: _site/posts/index.html
-  upload: _site/posts/index.html
-- url: "/Gemfile"
-  static_files: _site/Gemfile
-  upload: _site/Gemfile
-- url: "/Gemfile.lock"
-  static_files: _site/Gemfile.lock
-  upload: _site/Gemfile.lock
-- url: "/LICENSE.txt"
-  static_files: _site/LICENSE.txt
-  upload: _site/LICENSE.txt
-- url: "/README.md"
-  static_files: _site/README.md
-  upload: _site/README.md
-- url: "/init.go"
-  static_files: _site/init.go
-  upload: _site/init.go
-- url: "/jekyll-swiss-0.1.0.gem"
-  static_files: _site/jekyll-swiss-0.1.0.gem
-  upload: _site/jekyll-swiss-0.1.0.gem
-- url: "/jekyll-swiss.gemspec"
-  static_files: _site/jekyll-swiss.gemspec
-  upload: _site/jekyll-swiss.gemspec
-- url: "/scripts/build_script.sh"
-  static_files: _site/scripts/build_script.sh
-  upload: _site/scripts/build_script.sh
-- url: "/thumbnail.png"
-  static_files: _site/thumbnail.png
-  upload: _site/thumbnail.png
+  - url: "/about/"
+    static_files: _site/about/index.html
+    upload: _site/about/index.html
+  - url: "/"
+    static_files: _site/index.html
+    upload: _site/index.html
+  - url: "/assets/style.css"
+    static_files: _site/assets/style.css
+    upload: _site/assets/style.css
+  - url: "/posts/"
+    static_files: _site/posts/index.html
+    upload: _site/posts/index.html
+  - url: "/Gemfile"
+    static_files: _site/Gemfile
+    upload: _site/Gemfile
+  - url: "/Gemfile.lock"
+    static_files: _site/Gemfile.lock
+    upload: _site/Gemfile.lock
+  - url: "/LICENSE.txt"
+    static_files: _site/LICENSE.txt
+    upload: _site/LICENSE.txt
+  - url: "/README.md"
+    static_files: _site/README.md
+    upload: _site/README.md
+  - url: "/init.go"
+    static_files: _site/init.go
+    upload: _site/init.go
+  - url: "/jekyll-swiss-0.1.0.gem"
+    static_files: _site/jekyll-swiss-0.1.0.gem
+    upload: _site/jekyll-swiss-0.1.0.gem
+  - url: "/jekyll-swiss.gemspec"
+    static_files: _site/jekyll-swiss.gemspec
+    upload: _site/jekyll-swiss.gemspec
+  - url: "/scripts/build_script.sh"
+    static_files: _site/scripts/build_script.sh
+    upload: _site/scripts/build_script.sh
+  - url: "/thumbnail.png"
+    static_files: _site/thumbnail.png
+    upload: _site/thumbnail.png
