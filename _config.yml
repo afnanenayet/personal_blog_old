@@ -13,8 +13,16 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
+# includes/libraries
+gems:
+  - jekyll-app-engine
+
+exclude: ['*.json', '*.enc', 'passets/']
+
 title: Afnan Enayet
 description: A personal website
+permalink: /posts/:title/index.html
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "afnanenayet.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: afnanenayet
