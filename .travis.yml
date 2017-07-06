@@ -1,8 +1,16 @@
-deploy:
-  provider: gae
-  keyfile: YOUR SERVICE ACCOUNT JSON FILE
-  project: afnan-gapps
+language: ruby
+rvm:
+  - 2.4.1
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_5aa6e966fb1b_key -iv $encrypted_5aa6e966fb1b_iv
   -in key.json.enc -out key.json -d
+
+install:
+  - gem install bundler
+  - bundle install
+
+deploy:
+  provider: gae
+  project: afnan-gapps
+
