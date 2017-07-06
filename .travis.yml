@@ -19,5 +19,4 @@ deploy:
   provider: gae
   keyfile: key.json
   project: afnan-gapps
-  skip_cleanup: true
 
