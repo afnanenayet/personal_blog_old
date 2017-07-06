@@ -13,6 +13,7 @@ install:
 
 script:
   - bundle exec jekyll build
+  - cp _site/app.yaml app.yaml
 
 deploy:
   provider: gae
