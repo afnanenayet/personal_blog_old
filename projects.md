@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Projects
 permalink: /projects/
+title: Projects
 ---
 
 These are projects I am working on/have worked on. 

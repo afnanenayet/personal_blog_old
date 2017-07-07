@@ -23,5 +23,5 @@ Department researching using nanomagnets to replace transistors
     - Professor Jayasimha Atulasimha
 
 # Contact
-You can reach me at me@afnan.io
+You can reach me at [me@afnan.io](mailto:me@afnan.io)
 
