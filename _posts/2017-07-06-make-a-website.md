@@ -1,10 +1,8 @@
 ---
 layout: post
-title: "How I made this"
+title: "Creating a website with GAE, Travis, and Jekyll"
 category: posts
 ---
-
-# Setting up a website with Google App Engine, Travis CI, and Jekyll
 
 Recently, I decided that I wanted to change the look of my website. I'm 
 not really a web developer so I wanted a simple setup. I like Markdown, 
