@@ -5,7 +5,10 @@ permalink: /about/
 ---
 
 My name is Afnan Enayet. I study Computer Science at Dartmouth College.
-I'm on the Dartmouth Cycling Team, and I enjoy coding every once in a while. 
+I'm on the Dartmouth Cycling Team, I play guitar, and I enjoy programming. 
+
+# Resume
+Download my resume [here]({{ site.url }}/assets/resume.pdf)
 
 # Experience
 - Conducting research with Geisel School of Medicine researching diagnosis of non melanoma 
@@ -19,4 +22,6 @@ simulation of the [Battle of 73rd Easting](https://en.wikipedia.org/wiki/Battle_
 Department researching using nanomagnets to replace transistors
     - Professor Jayasimha Atulasimha
 
+# Contact
+You can reach me at me@afnan.io
 
