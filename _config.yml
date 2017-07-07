@@ -23,7 +23,7 @@ exclude: ['*.json', '*.enc', 'passets/']
 title: Afnan Enayet
 description: A personal website
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://afnan-gapps.appspot.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "afnan.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: afnanenayet
 
 # Optional social link, you can choose from the following options:
