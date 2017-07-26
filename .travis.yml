@@ -8,7 +8,7 @@ install:
   - gem install jekyll html-proofer jekyll-seo-tag jekyll-paginate jekyll-admin
 
 script:
-  - jekyll build && htmlproofer ./_site
+  - jekyll build 
 
 sudo: required
 
