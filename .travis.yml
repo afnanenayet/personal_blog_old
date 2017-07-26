@@ -10,7 +10,7 @@ install:
 script:
   - jekyll build && htmlproofer ./_site
 
-sudo: false
+sudo: required
 
 env:
   global:
