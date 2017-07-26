@@ -4,13 +4,14 @@ rvm:
   - 2.4.1
 
 install:
-  - rake geminstall
+  - bundle install
   - gem install jekyll html-proofer jekyll-seo-tag jekyll-paginate jekyll-admin
 
 script:
-  - jekyll build 
+  - bundle exec jekyll build
+  - htmlproofer ./_site/ --http-status-ignore 999
 
-sudo: required
+sudo: false
 
 env:
   global:
