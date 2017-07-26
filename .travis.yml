@@ -9,7 +9,7 @@ install:
 
 script:
   - bundle exec jekyll build
-  - htmlproofer ./_site/ --http-status-ignore 999
+  - htmlproofer ./_site/ --disable-external
 
 sudo: false
 
