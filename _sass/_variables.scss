@@ -1,35 +1,57 @@
+/* SCSS Variables */
 
-// Font family
-$body-font-family: "Helvetica Neue", Arial, sans-serif;
-$body-font-size: 16px;
-$prose-font-size: 20px;
+/*--------------
+  Font
+  -------------- */
+$base-font: 'Spoqa Han Sans', 'Source Sans Pro', Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, Verdana, Arial, Dotum, sans-serif;
+$code-font: Menlo, 'Ubuntu Mono', Monaco, 'Spoqa Han Sans', monospace;
+$code-gist-font: Menlo, 'Ubuntu Mono', Monaco, 'Spoqa Han Sans', monospace;
+
+$base-font-size: 18px;
+$base-font-size-sm: 14px;
+
+$mobile-font-size: 16px;
 
 
-// Type scale
-$h0-mobile: 64px;
-$h0-desktop: 128px;
+/*--------------
+  Color
+  -------------- */
+$base-color: $oc-gray-8;
+$base-lighten-color: $oc-gray-6;
 
-$h1-size: 40px !default;
-$h2-size: 32px !default;
-$h3-size: 24px !default;
-$h4-size: 20px !default;
-$h5-size: 16px !default;
-$h6-size: 12px !default;
+$background-color: $oc-white;
+$background-over-color: $oc-gray-1;
 
-// Default border color
-$color-border: #ddd !default;
+$text-color: $oc-gray-8;
+$link-color: $oc-blue-8;
+$code-color: $oc-indigo-9;
+$code-background-color: $oc-gray-1;
+$table-border-color: $oc-gray-2;
+$table-background-color: $oc-gray-1;
 
-// Container width
-$container-width: 64em;
+$divider-color: $oc-gray-1;
 
-// Large breakpoint
-$breakpoint-lg: 52em;
 
-// Spacing unit
-$spacer: 8px !default;
+/*--------------
+  List
+  -------------- */
 
-// Spacing scale
-$spacer-1: $spacer !default; // 8px
-$spacer-2: ($spacer * 2) !default; // 16px
-$spacer-3: ($spacer * 4) !default; // 32px
-$spacer-4: ($spacer * 8) !default; // 64px
+$li-bottom-space: 0.8em;
+$li-bullets-width: 1.7em;
+$li-line-height: 1.55;
+
+$ul-bullets-font: inherit;
+$ul-bullets-font-size: 1.2em;
+$ul-bullets-font-line-height: 1.2;
+$ul-bullets-right-space: 0.65em;
+
+$ol-bullets-font: inherit;
+$ol-bullets-font-size: 1em;
+$ol-bullets-font-line-height: inherit;
+$ol-bullets-right-space: 0.65em;
+
+$li-child-size-ratio: 0.95;
+
+$dt-width: 180px;
+$dt-dd-space: 20px;
+$dd-position: $dt-width+$dt-dd-space

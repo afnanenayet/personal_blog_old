@@ -1,13 +1,67 @@
-<div class="border-top-thin clearfix mt-2 mt-lg-4">
-  <div class="container mx-auto px-2">
-    <p class="col-8 sm-width-full left py-2 mb-0">This project is maintained by <a class="text-accent" href="https://github.com/{{ site.github_username }}">{{ site.github_username }}</a></p>
-    <ul class="list-reset right clearfix sm-width-full py-2 mb-2 mb-lg-0">
-      <li class="inline-block mr-1">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="{{ site.title }}">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-      </li>
-      <li class="inline-block">
-        <a class="github-button" href="https://github.com/{{ site.github_username }}/{{ site.github_repo }}" data-icon="octicon-star" data-count-href="{{ site.github_username }}/{{ github_repo }}/stargazers" data-count-api="/repos/{{ site.github_username }}/{{ github_repo }}#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star {{ site.github_username }}/{{ github_repo }} on GitHub">Star</a>
-      </li>
-    </ul>
+<!-- Documents about icons are here: http://fontawesome.io/icons/ -->
+<div class="footer">
+  <hr />
+  <div class="footer-link">
+    {% if site.author.facebook %}
+    <a href="https://www.facebook.com/{{ site.author.facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    {% endif %}
+	
+	{% if site.author.youtubeUser %}
+    <a href="https://www.youtube.com/user/{{ site.author.youtubeUser }}"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+    {% endif %}
+	
+	{% if site.author.youtubeChannel %}
+    <a href="https://www.youtube.com/channel/{{ site.author.youtubeChannel }}"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+    {% endif %}
+
+    {% if site.author.twitter %}
+    <a href="https://twitter.com/{{ site.author.twitter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    {% endif %}
+
+    {% if site.author.github %}
+    <a href="https://github.com/{{ site.author.github }}"><i class="fa fa-github" aria-hidden="true"></i></a>
+    {% endif %}
+	
+	{% if site.author.stackoverflow %}
+    <a href="http://stackoverflow.com/users/{{ site.author.stackoverflow }}"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+    {% endif %}
+	
+	{% if site.author.quora %}
+    <a href="https://www.quora.com/profile/{{ site.author.quora }}"><i class="fa fa-quora" aria-hidden="true"></i></a>
+    {% endif %}
+
+    {% if site.author.linkedin %}
+    <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+    {% endif %}
+	
+	{% if site.author.pinterest %}
+    <a href="https://www.pinterest.com/{{ site.author.pinterest }}"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+    {% endif %}
+	
+	{% if site.author.googlePlus %}
+    <a href="https://plus.google.com/{{ site.author.googlePlus }}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+    {% endif %}
+	
+	{% if site.author.instagram %}
+    <a href="https://www.instagram.com/{{ site.author.instagram }}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    {% endif %}
+	
+	{% if site.author.reddit %}
+    <a href="https://www.reddit.com/user/{{ site.author.reddit }}"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+    {% endif %}
+
+    {% if site.author.medium %}
+    <a href="https://medium.com/@{{ site.author.medium }}"><i class="fa fa-medium" aria-hidden="true"></i></a>
+    {% endif %}
+
+    {% if site.author.tumblr %}
+    <a href="https://{{ site.author.tumblr }}.tumblr.com"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+    {% endif %}
+
+    {% if site.author.email %}
+    <a href="mailto:{{ site.author.email }}"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+    {% endif %}
+
   </div>
+  © {{ site.copyright.year }} {{ site.copyright.name }}. All rights reserved.
 </div>

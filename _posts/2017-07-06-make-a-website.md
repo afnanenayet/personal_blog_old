@@ -1,7 +1,11 @@
 ---
 layout: post
 title: "Creating a website with GAE, Travis, and Jekyll"
+description: "Tutorial showing how to set up a website with Jekyll, Google App Engine, deployed by Travis CI"
 category: posts
+tags: [travis, jekyll, continuous, integration, GAE, google, app, engine]
+share: true
+comments: true
 ---
 
 Recently, I decided that I wanted to change the look of my website. I'm 
@@ -49,7 +53,7 @@ At the beginning of every markdown file that gets converted to an HTML page,
 you have to specify some metatdata. Some example markdown for a post would 
 look like 
 
-```
+```markdown
 ---
 layout: post
 title: "This is a post!"

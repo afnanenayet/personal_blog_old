@@ -21,12 +21,12 @@ design practices.
 ## Minigma
 An encryption app that utilizes Android intents to allow a user to send encrypted 
 messages through any app on their phone. Download on the 
-[Play Store](https://play.google.com/store/apps/details?id=com.enayet.minigma)
+[Play Store](https://play.google.com/store/apps/details?id=com.enayet.minigma).
 
 ## Battery Informatics
 Provides diagnostic information about a phone's battery, including charge 
 capacity, temperature, and rate of discharge. Download on the 
-[Play Store](https://play.google.com/store/apps/details?id=com.enayet.powinfo)
+[Play Store](https://play.google.com/store/apps/details?id=com.enayet.powinfo).
 
 ## [MyRuns](https://github.com/afnanenayet/MyRuns6)
 A fitness/run tracker app created for a computer science class at Dartmouth College. 
@@ -35,7 +35,7 @@ Google/Android services like location, accelerometer, and is multithreaded.
 Also uses machine learning to infer the type of activity a user is carrying out.
 
 # [ensh](https://github.com/afnanenayet/Enayet-Shell)
-Ensh stands for "Enayet Shell". It is a basic shell writte in Rust, designed 
+Ensh stands for "Enayet Shell." It is a basic shell written in Rust, designed 
 to be modern and efficient. Currently a work in progress. 
 
 # afnan.io
@@ -47,7 +47,7 @@ Google App Engine.
 I am working on the Matasano Cryptopals Challenge, a set of challenges designed 
 to teach some of the basics of cryptography. The challenges can be found 
 [here](https://cryptopals.com). My solutions, written in C++14, can be found 
-[here](https://github.com/afnanenayet/Cryptopals_Challenge)
+[here](https://github.com/afnanenayet/Cryptopals_Challenge).
 
 # tiny search engine
 For a software development class, we created a small search engine in C. 

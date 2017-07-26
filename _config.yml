@@ -1,52 +1,86 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole site, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing these this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# # # # # # # # # # # # #
+#   K i k o - p l u s   #
+# # # # # # # # # # # # #
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# Basic
+name:               "Afnan Enayet"
 
-# includes/libraries
-gems:
-  - jekyll-app-engine
+author:
+  twitter:          aftapus
+  github:           afnanenayet
+  quora:            Afnan-Enayet
+  linkedin:         afnanenayet
+  instagram:        aftapus
+  email:            me@afnan.io
 
-exclude: ['*.json', '*.enc', 'passets/']
+copyright:
+  year:             2017
+  name:             Afnan Enayet
 
-title: Afnan Enayet
-description: A personal website
-# baseurl: "" # the subpath of your site, e.g. /blog
-# url: "http://afnan.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: afnanenayet
+# Google-analytics
+google-analytics:
+  id:               "UA-57800813-3"
 
-# Optional social link, you can choose from the following options:
-# twitter (default), instagram, medium, or dribbble
-social_link: instagram
-social_username: aftapus
+# Disqus
+disqus:
+  id:               "afnan.io"
 
-# Set theme color here
-# Choose from: black (default), blue, gray, magenta, orange, red, white, and yellow.
-theme_color: red
+# URL
+  url:                "http://afnan.io" # the base hostname & protocol for your site
+# url:                "http://localhost:4000" # use this url when you develop
+baseurl:            "" # the subpath of your site, e.g. /blog
 
-# Build settings
-markdown: kramdown
 
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:           America/New_York
+permalink:          /:year-:month-:day/:title/
+
+# Pagination
+paginate:           5
+paginate_path:      /page:num/
+
+# Markdown
+markdown:           kramdown
 kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+  input:            GFM
 
-# Settings for GAE
-# Insert your configuration here or within _app.yaml
-# You need to specify a runtime for App Engine
-app_engine:
-  runtime: go
-  api_version: go1
-  default_expiration: 300s
+# Navigation
+nav:
+  - name:           "About"
+    url:            "/about"
+  - name:           "Projects"
+    url:            "/projects"
+  - name:           "Archive"
+    url:            "/archive"
+  - name:           "Tags"
+    url:            "/tags"
+  - name:           "Github"
+    url:            "https://github.com/AfnanEnayet"
 
+# Sass
+sass:
+  sass_dir:         _sass
+  style:            :compressed
+
+# Scopes
+defaults:
+  -
+    scope:
+      path:         ""
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
+
+# jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-admin
+
+exclude:            [vendor]

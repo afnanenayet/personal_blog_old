@@ -11,16 +11,13 @@ I'm on the Dartmouth Cycling Team, I play guitar, and I enjoy programming.
 Download my resume [here]({{ site.url }}/assets/resume.pdf)
 
 # Experience
-- Conducting research with Geisel School of Medicine researching diagnosis of non melanoma 
-skin cancer with machine learning
 - Research with the Department of Defense for a conceptual virtual reality 
 simulation of the [Battle of 73rd Easting](https://en.wikipedia.org/wiki/Battle_of_73_Easting)
-    - Dr. Joseph M. Rosen
-- Intern at Microsoft
-    - Windows core quality team
+with Dr. Joseph M. Rosen
+- Intern at Microsoft on the Windows core quality team
 - Research at Virginia Commonwealth University Nuclear and Mechanical Engineering 
-Department researching using nanomagnets to replace transistors
-    - Professor Jayasimha Atulasimha
+Department researching using nanomagnets to replace transistors with 
+Professor Jayasimha Atulasimha
 
 # Contact
 You can reach me at [me@afnan.io](mailto:me@afnan.io)
