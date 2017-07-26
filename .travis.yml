@@ -3,10 +3,6 @@ cache: bundler
 rvm:
   - 2.4.1
 
-before_install:
-- openssl aes-256-cbc -K $encrypted_5aa6e966fb1b_key -iv $encrypted_5aa6e966fb1b_iv
-  -in key.json.enc -out key.json -d
-
 install:
   - rake geminstall
   - bundle install
@@ -14,10 +10,4 @@ install:
 script:
   - jekyll build
   - cp _site/app.yaml app.yaml
-
-deploy:
-  provider: gae
-  keyfile: key.json
-  project: afnan-gapps
-  skip_cleanup: true
 
