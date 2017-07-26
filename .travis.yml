@@ -8,11 +8,11 @@ before_install:
   -in key.json.enc -out key.json -d
 
 install:
-  - gem install bundler
+  - rake geminstall
   - bundle install
 
 script:
-  - bundle exec jekyll build
+  - jekyll build
   - cp _site/app.yaml app.yaml
 
 deploy:
