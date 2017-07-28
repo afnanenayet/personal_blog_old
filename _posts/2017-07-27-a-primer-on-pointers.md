@@ -128,10 +128,10 @@ int main()
     int another_int = *int_ptr; // another_int = value that int_ptr points to
     int *another_int_ptr = &some_int;
 
-    (int_ptr == another_int_ptr) // true
-    (int_ptr = another_int) // false
-    (another_int == some_int) // true
-    (*another_int_ptr == some_int == another_int == *int_ptr) // true
+    (int_ptr == another_int_ptr); // true
+    (int_ptr == another_int); // false
+    (another_int == some_int); // true
+    (*another_int_ptr == some_int == another_int == *int_ptr); // true
     return 0;
 }
 ```
