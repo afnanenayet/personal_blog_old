@@ -25,12 +25,12 @@ The possibilities are endless!
 So what exactly is a pointer?
 
 A pointer is an operator in C that lets you "point" to a particular location in 
-memory. This is a powerful construct that lets you directly manipulate memory, 
-and pass references to the same location in memory to multiple functions, so you 
-can directly modify variables in other functions, or just avoid unecessarily 
+memory. With a pointer, you can directly manipulate memory and pass references 
+to the same location in memory to multiple functions, to directly modify variables 
+in other functions, or just avoid unecessarily 
 making a copy of a parameter to save memory. 
 
-Let's pretend we have an array of integers
+To illustrate this, let's pretend we have an array of integers:
 
 ```c
 int arr[] = {0, 1, 2, 3, 4};
@@ -101,6 +101,31 @@ and [free](http://en.cppreference.com/w/c/memory/free).
 These functions are found in `stdlib.h`, so if you are using these 
 functions in your C program, you will have to prepend the file with 
 `#include <stdlib.h>`.
+
+There is a very helpful macro in C called `sizeof`. Note that I mentioned 
+earlier that malloc takes the number of bytes to allocate as an argument.
+How do we know how many bytes to allocate for an array of `int`s, 
+a `double`, or a `char`? `sizeof` returns the size of the type in bytes, 
+which makes it very convenient to use with malloc. Let's look at how we 
+can use `sizeof`
+
+```c
+double *some_d = malloc(sizeof double); // allocating size for one double
+int *int_array = malloc(5 * sizeof(int)); // allocating an array of 5 integers
+```
+
+You can use `sizeof` with custom structs, and even for pointers themselves 
+Suppose you wanted to create an array of arrays. You'd do so like this:
+
+```c
+int **arr_of_arrs = malloc(sizeof(int*) * 4); // allocating space for 4 arrays
+
+for (int i = 0; i < 4; i++) {
+    arr_of_arrs[i] = malloc(4 * sizeof(int));
+}
+```
+
+This gives us an array of 4 arrays where each array has 4 elements. 
 
 # Usage
 
