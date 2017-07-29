@@ -42,7 +42,7 @@ In C, arrays are all contiguous, so every element is next to each other
 in memory. We can represent this in array in memory as such:
 
 | 0x0 | 0x1 | 0x2 | 0x3 | 0x4 | 
-| 0   | 1   | 2   | 3   | 4 |
+| :0:   | :1:   | :2:   | :3:   | :4: |
 
 We can access the second element in `arr` in two diferent ways:
 
