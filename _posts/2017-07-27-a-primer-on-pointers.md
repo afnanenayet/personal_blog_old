@@ -83,7 +83,7 @@ ptr = &integer; // this points to the address of the integer
 
 ## Functions
 
-There are two functions that you have to know use memory management in C:
+There are two functions that you have to know to use memory management in C:
 `malloc` and `free`. `malloc` allocates a block of memory. It takes an 
 argument which tells it how much memory to allocate (in bytes). 
 `free` is called on a variable that has been initialized by `malloc` - 
