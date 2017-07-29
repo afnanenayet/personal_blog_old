@@ -20,7 +20,7 @@ everything that's found in the [vim-sensible](https://github.com/tpope/vim-sensi
 plugin and true 24-bit color support. 
 
 Of course, you might be missing some goodies from goodies that you had in 
-your IDE, I won't deny that Visual Studio and CLion have some convenient 
+your IDE, I won't deny that Visual Studio and Clion have some convenient 
 goodies like autocompletion and formatting. 
 
 There are some very powerful autocompletion plugins available for Neovim and Vim 
