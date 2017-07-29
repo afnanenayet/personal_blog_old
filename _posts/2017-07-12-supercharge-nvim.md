@@ -69,7 +69,7 @@ path like I posted above
 
 ### Installing plugins
 
-Installing plugins with dein is extremely easy, you simply added a line in 
+Installing plugins with dein is extremely easy, you simply add a line in 
 your `init.vim` file. After the `dein.begin` line, add another line with 
 the format 
 
