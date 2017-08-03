@@ -61,7 +61,14 @@ into the function on the current line. If you have a function call on the curren
 line, then GDB will "step into" that function, allowing you to continue debugging 
 line by line inside the function. `finish` is like stepping out - it will continue 
 execution until the function of the current line finishes executing/until it 
-returns. Look below for reference sheets for GDB and LLDB. 
+returns.
+
+-------------------------------------------------------------------------------
+
+You can find a reference for these commands (in GDB)
+[here](http://darkdust.net/files/GDB%20Cheat%20Sheet.pdf). 
+[Here](http://lldb.llvm.org/lldb-gdb.html)
+is a cheat sheet from LLVM with LLDB commands and their gdb equivalents.
 
 ### Usage
 
@@ -328,12 +335,6 @@ $2 = 0x602420 "hello"
 ```
 We can see that the string now reads "hello". The program has been corrected.
 
--------------------------------------------------------------------------------
-
-You can find a reference for these commands (in GDB)
-[here](http://darkdust.net/files/GDB%20Cheat%20Sheet.pdf). 
-[Here](http://lldb.llvm.org/lldb-gdb.html)
-is a cheat sheet from LLVM with LLDB commands and their gdb equivalents.
 
 ## Valgrind
 
