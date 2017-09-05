@@ -23,7 +23,7 @@ google-analytics:
 
 # Disqus
 disqus:
-  id:               "afnan.io"
+  id:               "afnan_enayet"
 
 # URL
   url:                "http://afnan.io" # the base hostname & protocol for your site
