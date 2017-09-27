@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Exposing terminal variables with C"
-description: ""
+description: "Exploring how you can access your terminal variables with a simple C program"
 date: 2017-09-27
-tags: [c, fun, terminal, memory]
+tags: [c, fun, terminal, memory, short]
 comments: true
 ---
 
@@ -33,21 +33,21 @@ void print_vars(char **args);
 
 int main(int argc, char *argv[])
 {
-print_vars(argv);
-return 0;
+    print_vars(argv);
+    return 0;
 }
 
 void print_vars(char **args)
 {
-const unsigned long loop_limit = ULONG_MAX;
+    const unsigned long loop_limit = ULONG_MAX;
 
-// Reading arguments from memory addresses outside of the program
-// (should bleed into term vars)
-// Prints lines in the following format...
-// address: string corresponding to that address
-for (int i = 0; i < loop_limit; i++) {
-printf("%p: %s\n", args + i, args[i]);
-}
+    // Reading arguments from memory addresses outside of the program
+    // (should bleed into term vars)
+    // Prints lines in the following format...
+    // address: string corresponding to that address
+    for (int i = 0; i < loop_limit; i++) {
+        printf("%p: %s\n", args + i, args[i]);
+    }
 }
 ```
 
