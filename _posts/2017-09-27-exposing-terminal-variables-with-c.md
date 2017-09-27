@@ -14,7 +14,7 @@ interesting output -- all of my terminal variables.
 # Code
 
 The code to print out a number of variables is as follows, (I decided to
-continue printing variables through `UNSIGNED_LONG`);
+continue printing variables through `UNSIGNED_LONG`).
 
 ```c
 /* Afnan Enayet    leak_data.c
