@@ -7,9 +7,9 @@ tags: [c, fun, terminal, memory, short]
 comments: true
 ---
 
-I was writing a C program that took in a arguments, and I was printing out these
-arguments when I printed out more arguments than were given. I noticed some
-interesting output -- all of my terminal variables.
+I was writing a C program that took in some arguments and printed those
+arguments when I encountered some unexpected output -- all of my terminal
+variables.
 
 # Code
 
