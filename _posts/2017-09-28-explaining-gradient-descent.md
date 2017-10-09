@@ -139,5 +139,5 @@ performance gains that are brought on by operating on only a batch of the
 data at a time.
 
 If you're using stochastic gradient descent, you'll want to randomly shuffle
-the data, and perform the operation on that randomly shuffled mini-batch.
+the data, and perform each iteration on a randomly shuffled mini-batch.
 
