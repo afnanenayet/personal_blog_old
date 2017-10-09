@@ -7,36 +7,36 @@ tags: [C, lldb, gdb, valgrind, memory, leaks, segfault, debugging, debug]
 comments: true
 ---
 
-Debugging C can be a chore, but being able to pinpoint your memory leaks with 
-Valgrind and monitoring the flow of your program with GDB (or LLDB) can 
-speed up the development of your code significantly. It's a significant 
-improvement over sticking a bunch of `printf` statements in your code and 
-taking them out before production (which should by no means be your sole 
+Debugging C can be a chore, but being able to pinpoint your memory leaks with
+Valgrind and monitoring the flow of your program with GDB (or LLDB) can
+speed up the development of your code significantly. It's a significant
+improvement over sticking a bunch of `printf` statements in your code and
+taking them out before production (which should by no means be your sole
 tool for debugging).
 
-# Setup
+## Setup
 
-Installing gdb is pretty easy on both OS X and Linux. Use your favorite package 
-manager to install [gcc](https://gcc.gnu.org) and 
-[gdb](https://www.gnu.org/software/gdb/). You can also install the 
-[LLVM](https://llvm.org) compiler collection 
-which uses lldb as its debugging tool rather than gdb. 
+Installing gdb is pretty easy on both OS X and Linux. Use your favorite package
+manager to install [gcc](https://gcc.gnu.org) and
+[gdb](https://www.gnu.org/software/gdb/). You can also install the
+[LLVM](https://llvm.org) compiler collection
+which uses lldb as its debugging tool rather than gdb.
 
-Installing [Valgrind](http://valgrind.org) is similar - fire up your favorite 
-package manager, build from source, or download a release directly from the 
-webpage. On MacOS, there are some caveats if you're trying to install 
-Valgrind on MacOS > 10.12. 
+Installing [Valgrind](http://valgrind.org) is similar - fire up your favorite
+package manager, build from source, or download a release directly from the
+webpage. On MacOS, there are some caveats if you're trying to install
+Valgrind on MacOS > 10.12.
 
-# Usage
+## Usage
 
-## GDB/LLDB
+### GDB/LLDB
 
-GDB and LLDB allow a user to scrutizine the execution of their programs 
-line by line. You can look at the state of your program, inspecting variables, 
-seeing what is executing, and even evaluating arbitrary statements based on 
-the state of your program. We will examine how to use these programs. 
+GDB and LLDB allow a user to scrutizine the execution of their programs
+line by line. You can look at the state of your program, inspecting variables,
+seeing what is executing, and even evaluating arbitrary statements based on
+the state of your program. We will examine how to use these programs.
 
-### The basics
+#### The basics
 
 Both GDB/LLDB provide some basic debugging functions like:
 - step next
@@ -45,42 +45,42 @@ Both GDB/LLDB provide some basic debugging functions like:
 - step into
 - break
 
-GDB allows you to inspect your code by viewing its state as it executes 
-on a per line basis. You can step through your program line by line. More 
-commonly, if you suspect that your problem is in a particular segment of 
-code, you can create a breakpoint at a function or a line number. You can 
-do some powerful things while you step through your program like inspect 
-what variables are in your program, and execute arbitrary statements 
-based on the state of your program. 
+GDB allows you to inspect your code by viewing its state as it executes
+on a per line basis. You can step through your program line by line. More
+commonly, if you suspect that your problem is in a particular segment of
+code, you can create a breakpoint at a function or a line number. You can
+do some powerful things while you step through your program like inspect
+what variables are in your program, and execute arbitrary statements
+based on the state of your program.
 
-GDB/LLDB gives you access to certain key commands that will help you debug your 
-program. `next` will execute the current line, and the pause at the next line. 
-This will not go into any functions, it will block gdb until the instructions on 
-the current line have been executed. `step` (aka step into) will actually step 
-into the function on the current line. If you have a function call on the current 
-line, then GDB will "step into" that function, allowing you to continue debugging 
-line by line inside the function. `finish` is like stepping out - it will continue 
-execution until the function of the current line finishes executing/until it 
+GDB/LLDB gives you access to certain key commands that will help you debug your
+program. `next` will execute the current line, and the pause at the next line.
+This will not go into any functions, it will block gdb until the instructions on
+the current line have been executed. `step` (aka step into) will actually step
+into the function on the current line. If you have a function call on the current
+line, then GDB will "step into" that function, allowing you to continue debugging
+line by line inside the function. `finish` is like stepping out - it will continue
+execution until the function of the current line finishes executing/until it
 returns.
 
 -------------------------------------------------------------------------------
 
 You can find a reference for these commands (in GDB)
-[here](http://darkdust.net/files/GDB%20Cheat%20Sheet.pdf). 
+[here](http://darkdust.net/files/GDB%20Cheat%20Sheet.pdf).
 [Here](http://lldb.llvm.org/lldb-gdb.html)
 is a cheat sheet from LLVM with LLDB commands and their gdb equivalents.
 
-### Usage
+#### Usage
 
-In order to run gdb, you need to make sure that your binary has debug symbols 
-so that GDB knows the relationship between what is being executed and your 
-code. You compiling with optimization flags (`-OX`) can cause issues because 
-an optimization may not necessarily stay true to your code. For example, 
-a compiler will not keep unused variables because they waste stack space. 
-To stay safe, compile debug builds without any optimizations. You can 
-use an optimization flag with the debug symbols. The flag is `-g`, so 
-when compiling with gcc, add the `-g` flag to your list of flags. We will 
-explore an example with an example program I created. 
+In order to run gdb, you need to make sure that your binary has debug symbols
+so that GDB knows the relationship between what is being executed and your
+code. You compiling with optimization flags (`-OX`) can cause issues because
+an optimization may not necessarily stay true to your code. For example,
+a compiler will not keep unused variables because they waste stack space.
+To stay safe, compile debug builds without any optimizations. You can
+use an optimization flag with the debug symbols. The flag is `-g`, so
+when compiling with gcc, add the `-g` flag to your list of flags. We will
+explore an example with an example program I created.
 
 ### Example
 
@@ -91,12 +91,12 @@ You can download my example source code [here](https://gist.github.com/afnanenay
 You can compile the code with this command
 
 ```sh
-gcc -g gdb_valgrind_example.c -o gve -Wall -Wextra -std=c11 -pedantic 
+gcc -g gdb_valgrind_example.c -o gve -Wall -Wextra -std=c11 -pedantic
 -Wmissing-prototypes -Wstrict-prototypes -Wold-style-definition
 ```
 
-Try running the code. It seems like it should work. It's simple, it just 
-allocates a string and initializes it to `"hello"`. 
+Try running the code. It seems like it should work. It's simple, it just
+allocates a string and initializes it to `"hello"`.
 
 You can run the code with the following command:
 ```
@@ -110,12 +110,12 @@ This next string should be blank...
 zsh: segmentation fault (core dumped)  ./gve
 ```
 
-So what happened? Let's step through this program with GDB. Using LLDB should 
-be extremely similar. 
+So what happened? Let's step through this program with GDB. Using LLDB should
+be extremely similar.
 
 #### Debug
 
-In order to start running gdb, we have to give it a program to run. GDB 
+In order to start running gdb, we have to give it a program to run. GDB
 takes a binary followed by its arguments to initialize the debug runtime.
 
 ```
@@ -147,7 +147,7 @@ Reading symbols from gve...(no debugging symbols found)...done.
 (gdb)
 ```
 
-We want to set a breakpoint at the `main` function. Otherwise, GDB will just 
+We want to set a breakpoint at the `main` function. Otherwise, GDB will just
 run without giving us anything useful to look at.
 
 ```
@@ -163,9 +163,9 @@ Starting program: /net/ifs-users/afnan/gve
 Breakpoint 1, 0x0000000000400577 in main ()
 ```
 
-Now GDB is frozen at the beginning of the `main` function. Let's step through 
-the main function and see what's happening to the `str` variable before and 
-after we call `init_str`. 
+Now GDB is frozen at the beginning of the `main` function. Let's step through
+the main function and see what's happening to the `str` variable before and
+after we call `init_str`.
 
 ```
 Breakpoint 1, main () at gdb_valgrind_example.c:32
@@ -177,7 +177,7 @@ This next string should be blank...
 34	    init_str(str);
 ```
 
-Right before we call `init_str`, let's check the value of `str` by calling 
+Right before we call `init_str`, let's check the value of `str` by calling
 `p str`
 
 ```
@@ -185,8 +185,8 @@ Right before we call `init_str`, let's check the value of `str` by calling
 $1 = 0x0
 ```
 
-We can see that `str` is `NULL`, as it was assigned. Let's step and see what 
-happens after we call `init_str`. Theoretically, `str` should be changed 
+We can see that `str` is `NULL`, as it was assigned. Let's step and see what
+happens after we call `init_str`. Theoretically, `str` should be changed
 to "hello" after `init_str` is called.
 
 ```
@@ -196,13 +196,13 @@ to "hello" after `init_str` is called.
 $3 = 0x0
 ```
 
-We can see that `str` is still `NULL`. Now we know the function is not working 
-as intended. We could do two things: we could rerun the program and step until 
-we reach the `init_str` function call, or we could just set a breakpoint 
+We can see that `str` is still `NULL`. Now we know the function is not working
+as intended. We could do two things: we could rerun the program and step until
+we reach the `init_str` function call, or we could just set a breakpoint
 directly at the function. Let's set a breakpoint, since it'll be faster.
 
-We've already gone past the function call, so we will have to restart the 
-program. Let's set a breakpoint at `init_str` then restart the program. 
+We've already gone past the function call, so we will have to restart the
+program. Let's set a breakpoint at `init_str` then restart the program.
 
 ```
 (gdb) break init_str
@@ -217,9 +217,9 @@ Breakpoint 1, main () at gdb_valgrind_example.c:32
 (gdb)
 ```
 
-Our breakpoint set earlier is still there (at `main`). We don't want to 
-step all the way to the function, so let's continue until we hit the 
-next breakpoint. 
+Our breakpoint set earlier is still there (at `main`). We don't want to
+step all the way to the function, so let's continue until we hit the
+next breakpoint.
 
 ```
 (gdb) c
@@ -230,10 +230,10 @@ Breakpoint 2, init_str (str=0x0) at gdb_valgrind_example.c:25
 25	    str = malloc(5);
 ```
 
-Now we've reached the start of the `init_str` function. GDB tells us which 
+Now we've reached the start of the `init_str` function. GDB tells us which
 file and line the breakpoint is one. It also tells us the value of the argument:
-`str = 0x0`. So we know `str=NULL` when `init_str` is starting. Let's step through 
-the function, inspecting the variables as we go through, so we can see what's going 
+`str = 0x0`. So we know `str=NULL` when `init_str` is starting. Let's step through
+the function, inspecting the variables as we go through, so we can see what's going
 on.
 
 ```
@@ -253,16 +253,16 @@ main () at gdb_valgrind_example.c:35
 $6 = 0x0
 ```
 
-It looks like `str` gets allocated correctly as evidence by `$4`. It is assigned 
+It looks like `str` gets allocated correctly as evidence by `$4`. It is assigned
 correctly with `strcpy`, but when we return, `str` becomes `NULL` again.
 
-This means that we're not actually changing `str` outside of the scope of 
-`init_str`. This is because we need some pointer indirection - to affect a 
+This means that we're not actually changing `str` outside of the scope of
+`init_str`. This is because we need some pointer indirection - to affect a
 variable outside of its enclosing scope, we need a pointer to that variable.
 It's essentially the same here: we need a pointer to our `char*`.
 
-We can easily rectify the problem by passing a reference to our string rather 
-than passing in the string directly. This is called indirection. Let's 
+We can easily rectify the problem by passing a reference to our string rather
+than passing in the string directly. This is called indirection. Let's
 fix the program:
 
 ```c
@@ -272,7 +272,7 @@ fix the program:
  * use GDB/LLDB and Valgrind
  *
  * Functions:
- *   - init_str: a functions that initializes a string 
+ *   - init_str: a functions that initializes a string
  *     to "hello"
  *
  */
@@ -306,9 +306,9 @@ int main(void)
 }
 ```
 
-Let's go ahead and check that the program is working as intended. Recompile 
-the file and load it with GDB. Let's set a breakpoint right before and 
-right after the function call so we can see if `str` was allocated/set 
+Let's go ahead and check that the program is working as intended. Recompile
+the file and load it with GDB. Let's set a breakpoint right before and
+right after the function call so we can see if `str` was allocated/set
 properly.
 
 ```
@@ -336,27 +336,27 @@ $2 = 0x602420 "hello"
 We can see that the string now reads "hello". The program has been corrected.
 
 
-## Valgrind
+### Valgrind
 
-Even if a program is working correctly or appears to be working correctly, memory 
+Even if a program is working correctly or appears to be working correctly, memory
 errors could be present that you'll never see, or will pop up seemingly randomly
-in a manner that makes it difficult to diagnose with GDB. 
+in a manner that makes it difficult to diagnose with GDB.
 
-Valgrind is a tool that inspects your binary to see if there are any memory errors 
-or leaks. It's a very powerful tool that you should use to inspect your programs 
-to ensure program correctness. 
+Valgrind is a tool that inspects your binary to see if there are any memory errors
+or leaks. It's a very powerful tool that you should use to inspect your programs
+to ensure program correctness.
 
-### The basics
+#### The basics
 
-Valgrind contains a number of tools that you can use to help you diagnose/inspect 
-your program. You can initialize a certain tool by passing an argument flag to 
-Valgrind. We're going to use memcheck, which is described 
-[here](http://valgrind.org/info/tools.html). There are other tools available that 
-are very helpful for increasing the performance of your C/C++ programs, but this 
-particular post will not cover them. The memcheck tool will run your program, display 
+Valgrind contains a number of tools that you can use to help you diagnose/inspect
+your program. You can initialize a certain tool by passing an argument flag to
+Valgrind. We're going to use memcheck, which is described
+[here](http://valgrind.org/info/tools.html). There are other tools available that
+are very helpful for increasing the performance of your C/C++ programs, but this
+particular post will not cover them. The memcheck tool will run your program, display
 output, and display errors as they arise while the program is executing.
 
-The example usage for our program would be `valgrind --tool=memcheck 
+The example usage for our program would be `valgrind --tool=memcheck
 --leak-check=full`
 
 Let's try it
@@ -407,9 +407,9 @@ hello
 ==27065== ERROR SUMMARY: 4 errors from 3 contexts (suppressed: 0 from 0)
 ```
 
-We have a memory leak! We've lost 5 bytes from where we called `malloc` in 
-the `init_str` method. This means that we forgot to free the string that 
-we allocated. Let's fix this and then run Valgrind again. 
+We have a memory leak! We've lost 5 bytes from where we called `malloc` in
+the `init_str` method. This means that we forgot to free the string that
+we allocated. Let's fix this and then run Valgrind again.
 
 Here is the corrected program:
 
@@ -493,9 +493,8 @@ hello
 ==27500== ERROR SUMMARY: 3 errors from 2 contexts (suppressed: 0 from 0)
 ```
 
-There are some errors, but we fixed the memory leak! I will address these 
-errors later or in another blog post. 
+There are some errors, but we fixed the memory leak! I will address these
+errors later or in another blog post.
 
 Happy debugging!
-
 

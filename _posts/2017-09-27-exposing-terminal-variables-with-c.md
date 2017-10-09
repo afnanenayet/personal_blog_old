@@ -11,7 +11,7 @@ I was writing a C program that took in some arguments and printed those
 arguments when I encountered some unexpected output -- all of my terminal
 variables.
 
-# Code
+## Code
 
 The code to print out a number of variables is as follows, (I decided to
 continue printing variables through `UNSIGNED_LONG`).
@@ -53,7 +53,7 @@ void print_vars(char **args)
 
 Compilation: `clang leak_data.c -o leak`
 
-# What it gives us
+## What it gives us
 
 The code runs and prints out the first couple of arguments, if any were supplied.
 The first argument will be the name of the program. The next couple of lines will

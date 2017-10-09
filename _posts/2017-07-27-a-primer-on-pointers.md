@@ -7,28 +7,28 @@ tags: [C, pointers, C++, memory, management, malloc, free]
 comments: true
 ---
 
-A lot of people have trouble grasping manual memory management when they first 
-encounter it. The syntax can be a little confusing and debugging can be 
-an extremely painful process - whether you have a segfault or Valgrind is 
-complaining that you *still* have memory leaks. 
+A lot of people have trouble grasping manual memory management when they first
+encounter it. The syntax can be a little confusing and debugging can be
+an extremely painful process - whether you have a segfault or Valgrind is
+complaining that you *still* have memory leaks.
 
-Using pointers in C, while a little intimidating at first, is not as difficult 
-as most people expect. 
+Using pointers in C, while a little intimidating at first, is not as difficult
+as most people expect.
 
-C gives you a lot of access to memory - you can allocate bytes for use in 
-your program, you can deallocate them, you can directly access 
-memory addresses in your program, and pass them around wherever you want. 
+C gives you a lot of access to memory - you can allocate bytes for use in
+your program, you can deallocate them, you can directly access
+memory addresses in your program, and pass them around wherever you want.
 The possibilities are endless!
 
-# A brief overview
+## A brief overview
 
 So what exactly is a pointer?
 
-A pointer is an operator in C that lets you "point" to a particular location in 
-memory. With a pointer, you can directly manipulate memory and pass references 
-to the same location in memory to multiple functions, to directly modify variables 
-in other functions, or just avoid unecessarily 
-making a copy of a parameter to save memory. 
+A pointer is an operator in C that lets you "point" to a particular location in
+memory. With a pointer, you can directly manipulate memory and pass references
+to the same location in memory to multiple functions, to directly modify variables
+in other functions, or just avoid unecessarily
+making a copy of a parameter to save memory.
 
 To illustrate this, let's pretend we have an array of integers:
 
@@ -37,11 +37,11 @@ int arr[] = {0, 1, 2, 3, 4};
 int *ptr = &arr; // this is a pointer to the first element of arr
 ```
 
-`arr` is an array of integers. Each element takes up some space in memory. 
-In C, arrays are all contiguous, so every element is next to each other 
+`arr` is an array of integers. Each element takes up some space in memory.
+In C, arrays are all contiguous, so every element is next to each other
 in memory. We can represent this in array in memory as such:
 
-| 0x0 | 0x1 | 0x2 | 0x3 | 0x4 | 
+| 0x0 | 0x1 | 0x2 | 0x3 | 0x4 |
 | 0   | 1   | 2   | 3   | 4   |
 
 We can access the second element in `arr` in two diferent ways:
@@ -51,24 +51,24 @@ int first_elem = arr[1];
 int first_elem_ptr = *(ptr + 1);
 ```
 
-Because `ptr` points to the second element of `arr`, adding 1 to it brings it from 
-address `0x0` to `0x1`, which is where you will find `1`. 
+Because `ptr` points to the second element of `arr`, adding 1 to it brings it from
+address `0x0` to `0x1`, which is where you will find `1`.
 
-You can pass this pointer to other functions as well, and directly modify 
-this array without returning/copying over a new array. 
+You can pass this pointer to other functions as well, and directly modify
+this array without returning/copying over a new array.
 
-# Syntax
+## Syntax
 
-We will first start by defining the syntax and necessary functions that 
-you need to allocate memory, declare pointers, get the address of a 
-function, and free the memory that you have allocated. 
+We will first start by defining the syntax and necessary functions that
+you need to allocate memory, declare pointers, get the address of a
+function, and free the memory that you have allocated.
 
-## Operators 
+### Operators
 
-In C, you have two operators that pertain to memory management: `&` and `*`. 
-The `*` allows you to declare a pointer variable type. If you use the `*` on 
-a pointer after it has already been declared, you will get the value that it 
-references. This is called dereferencing. The `&` operator returns the address 
+In C, you have two operators that pertain to memory management: `&` and `*`.
+The `*` allows you to declare a pointer variable type. If you use the `*` on
+a pointer after it has already been declared, you will get the value that it
+references. This is called dereferencing. The `&` operator returns the address
 of a variable, so it will return a pointer to the variable it is being used on.
 
 Here is an example of the operators in action:
@@ -81,32 +81,32 @@ ptr = &integer; // this points to the address of the integer
 (*ptr == integer); // "true"
 ```
 
-## Functions
+### Functions
 
 There are two functions that you have to know to use memory management in C:
-`malloc` and `free`. `malloc` allocates a block of memory. It takes an 
-argument which tells it how much memory to allocate (in bytes). 
-`free` is called on a variable that has been initialized by `malloc` - 
-it frees the memory that was being used. You want to free this memory 
-up to be reclaimed by the operating system so you can avoid memory 
-leaks. 
+`malloc` and `free`. `malloc` allocates a block of memory. It takes an
+argument which tells it how much memory to allocate (in bytes).
+`free` is called on a variable that has been initialized by `malloc` -
+it frees the memory that was being used. You want to free this memory
+up to be reclaimed by the operating system so you can avoid memory
+leaks.
 
-You will also want to make sure that everything that has been `malloc`'d 
-is also `free`'d, and that you don't `free` a block of memory that has 
-already had `free` called on it. 
+You will also want to make sure that everything that has been `malloc`'d
+is also `free`'d, and that you don't `free` a block of memory that has
+already had `free` called on it.
 
-Here are the references for [malloc](https://www.gnu.org/software/libc/manual/html_node/Basic-Allocation.html) 
+Here are the references for [malloc](https://www.gnu.org/software/libc/manual/html_node/Basic-Allocation.html)
 and [free](http://en.cppreference.com/w/c/memory/free).
 
-These functions are found in `stdlib.h`, so if you are using these 
-functions in your C program, you will have to prepend the file with 
+These functions are found in `stdlib.h`, so if you are using these
+functions in your C program, you will have to prepend the file with
 `#include <stdlib.h>`.
 
-There is a very helpful macro in C called `sizeof`. Note that I mentioned 
+There is a very helpful macro in C called `sizeof`. Note that I mentioned
 earlier that malloc takes the number of bytes to allocate as an argument.
-How do we know how many bytes to allocate for an array of `int`s, 
-a `double`, or a `char`? `sizeof` returns the size of the type in bytes, 
-which makes it very convenient to use with malloc. Let's look at how we 
+How do we know how many bytes to allocate for an array of `int`s,
+a `double`, or a `char`? `sizeof` returns the size of the type in bytes,
+which makes it very convenient to use with malloc. Let's look at how we
 can use `sizeof`
 
 ```c
@@ -114,7 +114,7 @@ double *some_d = malloc(sizeof double); // allocating size for one double
 int *int_array = malloc(5 * sizeof(int)); // allocating an array of 5 integers
 ```
 
-You can use `sizeof` with custom structs, and even for pointers themselves 
+You can use `sizeof` with custom structs, and even for pointers themselves
 Suppose you wanted to create an array of arrays. You'd do so like this:
 
 ```c
@@ -125,19 +125,19 @@ for (int i = 0; i < 4; i++) {
 }
 ```
 
-This gives us an array of 4 arrays where each array has 4 elements. 
+This gives us an array of 4 arrays where each array has 4 elements.
 
-# Usage
+## Usage
 
-Let's take a look at an example that utilizes the functions and operators that 
-were just discussed. 
+Let's take a look at an example that utilizes the functions and operators that
+were just discussed.
 
 ```c
 #include <stdio.h> // printf
 #include <stdlib.h> // free, malloc
 
-int main() 
-{    
+int main()
+{
     int *arr = malloc(sizeof(int) * 5); // allocate space for 5 integers
 
     // Setting each element in the array equal to the value of its index
@@ -148,7 +148,7 @@ int main()
 
     free(arr); // free the array we allocated
 
-    int some_int = 0; 
+    int some_int = 0;
     int *int_ptr = &some_int; // this pointer is set equal to the address of some_int
     int another_int = *int_ptr; // another_int = value that int_ptr points to
     int *another_int_ptr = &some_int;
@@ -161,6 +161,6 @@ int main()
 }
 ```
 
-This covers some of the basics of allocating and deallocating memory in C. 
-Stay tuned for a primer on using GDB/LLDB and Valgrind. 
+This covers some of the basics of allocating and deallocating memory in C.
+Stay tuned for a primer on using GDB/LLDB and Valgrind.
 
