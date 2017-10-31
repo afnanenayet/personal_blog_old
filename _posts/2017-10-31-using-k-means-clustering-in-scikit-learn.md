@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Using K means clustering in Scikit-learn"
+title: "Using k-means-clustering in scikit-learn"
 description: "Demonstration of K-means clustering on a health data set with sklearn"
 date: 2017-10-31
 tags: [machine, learning, unsupervised, clustering, scikit, learn, sklearn, liver, health, data, science]
@@ -38,8 +38,8 @@ The structure of the data is as follows (also found [here](http://archive.ics.uc
    5. gammagt: gamma-glutamyl transpeptidase
    6. drinks: number of half-pint equivalents of alcoholic beverages drunk per day
    7. selector  field used to split data into two sets
-   
-It appears that column 7 is arbitrary. For the sake of this exercise, we'll treat more than 5 drinks per day as alcoholism, or some other classifier. 
+
+It appears that column 7 is arbitrary.
 
 We can explore the relationship between the data and the number of drinks to see if there's some sort of polynomial relationship or heavy clustering. Right now, we will decide that the number of drinks, whether as some threshold, or some polynomial relationship, is our `y` value
 
@@ -51,13 +51,13 @@ col_names = [
     "sgpt",
     "sgot",
     "gammagt",
-    "drinks", 
+    "drinks",
     "gt5",  # "greater than 5", this is the selector as described above
 ]
 raw_data = pd.read_csv("data/liver_data.csv", header=None, names=col_names)
 ```
 
-Let's look at the data's attributes. We will start by looking at the first 10 entries.
+Let's look at the data's attributes. We will start by looking at the first 5 entries.
 
 
 ```python
@@ -93,7 +93,7 @@ raw_data.info()
     memory usage: 16.2 KB
 
 
-We will now normalize the data with `L2` normalization. Having different scales for different features can bias the machine learning model and it is generally better to have normalized data for the sake of computation. 
+We will now normalize the data with `L1` normalization. Having different scales for different features can bias the machine learning model and it is generally better to have normalized data for the sake of computation.
 
 We will also make the assumption that the traits present in the dataset have a distribution close to the normal distribution amongst the general population.
 
@@ -108,7 +108,7 @@ m_norm_data = pd.DataFrame(columns=raw_data.columns, data=m_norm_data)  # conver
 norm_data["drinks"] = m_norm_data["drinks"]
 ```
 
-Scikit-learn returned a `numpy` array, we will convert it back to a Pandas Dataframe and bring back the column headers found in `raw_data`, since they were removed by the normalization function.
+Scikit-learn returned a `numpy` array. We will convert it back to a Pandas Dataframe and bring back the column headers found in `raw_data`, since they were removed by the normalization function.
 
 
 ```python
@@ -173,7 +173,7 @@ Now we will define the hyperparameters we want iterate through in order to find 
 
 ```python
 # Dictionary of hyperparameters to iterate through
-# GridSearchCV will try every combination of these hyperparameters and 
+# GridSearchCV will try every combination of these hyperparameters and
 # return the model with the best score via KFold validation
 hyperparams = {
     "n_clusters": [2, 3],
@@ -185,8 +185,8 @@ hyperparams = {
 k_means = KMeans()  # sets jobs equal to number of cores
 
 ensemble = GridSearchCV(
-    estimator=k_means, 
-    param_grid=hyperparams, 
+    estimator=k_means,
+    param_grid=hyperparams,
     cv=k_fold,
     n_jobs=-1
 )
@@ -214,7 +214,7 @@ ensemble.fit(norm_data)
 
 
 
-Now, we need to evaluate the effectiveness of the clustering model. This is difficult to do because the `score()` doesn't provide a good metric, since there is no "ground truth" for the model, since it's unlabeled. We can look at the silhoutte score, which shows how close the points are to the center of their clusters (tighter clusters will give us a better score, if the data points are very scattered, this indicates that our clusters are too loose). The values for the score range from `[-1, 1]` and a score of `1` is ideal. 
+Now, we need to evaluate the effectiveness of the clustering model. This is difficult to do because the `score()` doesn't provide a good metric, since there is no "ground truth" for the model, since it's unlabeled. We can look at the silhoutte score, which shows how close the points are to the center of their clusters (tighter clusters will give us a better score, if the data points are very scattered, this indicates that our clusters are too loose). The values for the score range from `[-1, 1]` and a score of `1` is ideal.
 
 
 ```python
@@ -247,8 +247,8 @@ bin_params = {
 bin_k_means = KMeans(n_clusters=2)  # set 2 clusters
 
 binary_ensemble = GridSearchCV(
-    estimator=bin_k_means, 
-    param_grid=bin_params, 
+    estimator=bin_k_means,
+    param_grid=bin_params,
     cv=k_fold,
     n_jobs=-1
 )
@@ -269,3 +269,4 @@ print(binary_ensemble.best_params_)
 
 
 We can see that binary classification has a pretty decent score that isn't too much lower than when we divided the data into three groups.
+
