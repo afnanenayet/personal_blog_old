@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Using K means clustering in Scikit learn"
-description: ""
+title: "Using K means clustering in Scikit-learn"
+description: "Demonstration of K-means clustering on a health data set with sklearn"
 date: 2017-10-31
 tags: [machine, learning, unsupervised, clustering, scikit, learn, sklearn, liver, health, data, science]
 comments: true
 ---
 
-We will examine an unlabeled dataset of recorded data about livers that are believed to be indicative of liver disorders/liver disease, as well as the frequency of drinks per day per person to create a model. We will use K-means clustering to find interesting groups/clusters within the dataset.
+We will examine an unlabeled dataset of recorded data about livers that are believed to be indicative of liver disorders/liver disease, as well as the frequency of drinks per day per person to create a model. We will use K-means clustering to find interesting groups/clusters within the dataset. We will also use cross validation and ensemble learning to fine-tune the model.
 
 ## Exploring the data
 
