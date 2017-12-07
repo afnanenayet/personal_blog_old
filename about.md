@@ -7,10 +7,10 @@ permalink: /about/
 My name is Afnan Enayet. I study Computer Science at Dartmouth College.
 I'm on the Dartmouth Cycling Team, I play guitar, and I enjoy programming. 
 
-# Resume
+## Resume
 Download my resume [here]({{ site.url }}/assets/resume.pdf)
 
-# Experience
+## Experience
 - Research for the Department of Defense for a conceptual virtual reality 
 simulation of the [Battle of 73rd Easting](https://en.wikipedia.org/wiki/Battle_of_73_Easting)
 with [Dr. Joseph M. Rosen](https://engineering.dartmouth.edu/people/faculty/joseph-rosen/)
@@ -19,6 +19,6 @@ with [Dr. Joseph M. Rosen](https://engineering.dartmouth.edu/people/faculty/jose
 University Nuclear and Mechanical Engineering Department with Professor Jayasimha 
 Atulasimha
 
-# Contact
+## Contact
 You can reach me at [me@afnan.io](mailto:me@afnan.io)
 
