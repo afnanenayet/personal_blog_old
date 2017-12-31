@@ -90,6 +90,23 @@ body {
   }
 }
 
+.header-smaller {
+  text-align: left;
+  margin-bottom: .75rem;
+  font-size: 1rem;
+  font-weight: 550;
+  text-transform: lowercase;
+
+  a {
+    color: $base-color;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
 /*--------------
   Page
   -------------- */
