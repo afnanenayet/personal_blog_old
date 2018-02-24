@@ -15,7 +15,8 @@ _You can find the link to the actual code [here](https://github.com/blendlabs/go
 ## The problem
 
 Right now, I'm a software engineering intern on the infrastructure team at
-Blend Labs. We run a standard microservice architecture over k8s running on AWS
+[Blend Labs](https://blend.com).
+We run a standard microservice architecture over k8s running on AWS
 instances. Internal apps make it convenient to run and deploy
 microservices, abstracting away a lot of k8s stuff. It's simple. You just
 register an image or a git repo and let our tools do the rest.
