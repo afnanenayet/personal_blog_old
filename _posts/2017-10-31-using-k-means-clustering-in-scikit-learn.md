@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Using k-means-clustering in scikit-learn"
-description: "Demonstration of K-means clustering on a health data set with sklearn"
+title: "Diagnosing livers with machine learning"
+description: "Infer how healthy a liver is through k-means-clustering"
 date: 2017-10-31
 tags: [machine, learning, unsupervised, clustering, scikit, learn, sklearn, liver, health, data, science]
 comments: true
