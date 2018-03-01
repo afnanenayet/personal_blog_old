@@ -6,12 +6,16 @@ layout: default
     <a href="{{site.url}}{{site.baseurl}}">{{ site.name }}</a>
   </div>
 
-  <div class="header-smaller">
-    <a href="{{site.url}}/about"> about </a>
-    <a href="{{site.url}}/projects"> projects </a>
-    <a href="{{site.url}}/archive"> archive </a>
-    <a href="{{site.url}}/tags"> tags </a>
-  </div>
+  <nav class="header-nav">
+    {% for nav in site.nav %}
+    {% if nav.url contains 'http://' or nav.url contains 'https://' %}
+    <a href="{{ nav.url }}">{{ nav.name }}</a>
+    {% else %}
+    <a href="{{ nav.url | prepend: site.baseurl }}">{{ nav.name }}</a>
+    {% endif %}
+    {% endfor %}
+  </nav>
+  <br/>
 </header>
 <div class="page">
   <div class="page-title">{{ page.title }}</div>

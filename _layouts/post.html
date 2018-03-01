@@ -5,13 +5,19 @@ layout: default
   <div class="header-small">
     <a href="{{site.url}}{{site.baseurl}}">{{ site.name }}</a>
   </div>
-  <div class="header-smaller">
-    <a href="{{site.url}}/about"> about </a>
-    <a href="{{site.url}}/projects"> projects </a>
-    <a href="{{site.url}}/archive"> archive </a>
-    <a href="{{site.url}}/tags"> tags </a>
-  </div>
+
+  <nav class="header-nav">
+    {% for nav in site.nav %}
+    {% if nav.url contains 'http://' or nav.url contains 'https://' %}
+    <a href="{{ nav.url }}">{{ nav.name }}</a>
+    {% else %}
+    <a href="{{ nav.url | prepend: site.baseurl }}">{{ nav.name }}</a>
+    {% endif %}
+    {% endfor %}
+  </nav>
+  <br/>
 </header>
+
 <div class="post">
   <div class="post-title">{{ page.title }}</div>
   <span class="post-date">
@@ -31,6 +37,7 @@ layout: default
   </div>
 
   {{ content }}
+  
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
   <!-- Disqus -->
