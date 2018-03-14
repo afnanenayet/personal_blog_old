@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "All possible encodings from a numerical mapping"
-description: ""
+description: "Explaining a Facebook interview that utilizes dynamic programming"
 date: 2018-03-12
 tags: [facebook, interview, question, prep, dynamic programming, subproblems, recursion
 ]
@@ -147,6 +147,11 @@ the next letter you decode is the one after that pair).
 ```python
 def dp_count(s :str) -> int:
     """
+    Determines the number of ways a string or array of digits can be decoded
+    given the decoding rules provided by the problem.
+    s: an array of single digits integers (every digit is between 1 and 26,
+    inclusive)
+    :return: the number of ways `s` can be decoded
     """
     # add an extra element because cache[len(s)] should return our answer
     cache = [0] * (len(s) + 1)
