@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "All possible encodings from a numerical mapping"
-description: "Explaining a Facebook interview that utilizes dynamic programming"
+description: "Explaining a Facebook interview question that utilizes dynamic programming"
 date: 2018-03-12
 tags: [facebook, interview, question, prep, dynamic programming, subproblems, recursion
 ]
