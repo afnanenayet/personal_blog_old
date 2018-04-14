@@ -164,8 +164,3 @@ Some of my other favorite plugins are:
 - [NERD tree](https://github.com/scrooloose/nerdtree): a nice hierarchical file browser
 - [fzy](https://github.com/jhawthorn/fzy): a fast fuzzy file finder I use as to search for files and for text within files
 - [vim airline](https://github.com/vim-airline/vim-airline/): a lean powerline plugin for vim
-
-
-I hope this was a helpful article, when I first started out with neovim, trying
-to configure language servers and deoplete, I had a lot of trouble figuring out
-how to start.

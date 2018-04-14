@@ -8,7 +8,7 @@ tags: [neovim, vim, C++, C, dein, plugins]
 category: posts
 ---
 
-*Note*: You can find an updated version of this article [here]
+*Note*: You can find an updated version of this article [here](http://afnan.io/2018-04-12/my-neovim-development-setup/)
 
 ------------------------------------------------------------------------------
 
