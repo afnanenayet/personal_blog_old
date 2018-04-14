@@ -153,7 +153,7 @@ names of the sources for entries that aren't language servers).
     - [deoplete-rust](https://github.com/sebastianmarkow/deoplete-rust) (source) `rust`
     - [rls](https://github.com/rust-lang-nursery/rls/) (language server)
 - C/C++:
-    - [deoplete-clangx](https://github.com/Shougo/deoplete-clangx) (source) `clangd`
+    - [deoplete-clangx](https://github.com/Shougo/deoplete-clangx) (source) `clangx`
     - [cquery](https://github.com/cquery-project/cquery) (language server) note that I've found this to be the most effective solution for large projects
     - [clangd](https://clang.llvm.org/extra/clangd.html) (language server) `clang`
 
