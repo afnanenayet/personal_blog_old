@@ -8,6 +8,10 @@ tags: [neovim, vim, C++, C, dein, plugins]
 category: posts
 ---
 
+*Note*: You can find an updated version of this article [here]
+
+------------------------------------------------------------------------------
+
 Vim is an excellent text editor. It's fast and has a light footprint, and tends
 to be installed in most Unix systems you'll come across. You can use it across
 SSH, and once you get the hang of the keybindings, you'll find that it's
