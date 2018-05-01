@@ -11,6 +11,12 @@ It's been a while since I wrote about my Neovim setup. Since my last post, my
 `nvim` config has grown to be a little more sophisticated, and I finally
 worked out autocompletion and linting for all of the languages I work with.
 
+Here's what my editor looks like:
+
+![neovim c++](/assets/images/nvim_0.png)
+
+![neovim rust](/assets/images/nvim_1.png)
+
 ## Split up your `init.vim`
 
 I had a horribly long `init.vim` file before. It gets clunky to manage and
