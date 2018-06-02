@@ -11,7 +11,7 @@ I'm on the Dartmouth Cycling Team, I play guitar, and I enjoy programming.
 
 ## Resume
 
-Download my resume [here]({{ site.url }}/assets/resume.pdf)
+Download my resume [here]({{ site.url }}/assets/documents/resume.pdf)
 
 ## Experience
 
@@ -29,7 +29,11 @@ Atulasimha
 
 ### Academic
 
-This is relevant CS coursework I have taken at Dartmouth College:
+#### Works
+
+- [Replacing transistors with nanomagnets for computation (2015)]({{ site.url }}/assets/documents/replacing_transistors_nanomagnets.pdf)
+
+#### Relevant coursework
 
 - Discrete Math
 - Algorithms
@@ -46,7 +50,7 @@ You can reach me at [me@afnan.io](mailto:me@afnan.io)
 
 This is the public PGP key associated with `afnan.enayet@gmail.com`
 
-You can also access it at afnan.io/assets/publickey.asc
+You can also access it at {{ site.url }}/assets/publickey.asc
 
 ```txt
 -----BEGIN PGP PUBLIC KEY BLOCK-----
