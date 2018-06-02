@@ -50,7 +50,7 @@ You can reach me at [me@afnan.io](mailto:me@afnan.io)
 
 This is the public PGP key associated with `afnan.enayet@gmail.com`
 
-You can also access it at {{ site.url }}/assets/publickey.asc
+You can also access it at [afnan.io/assets/publickey.asc]({{ site.url }}/assets/publickey.asc)
 
 ```txt
 -----BEGIN PGP PUBLIC KEY BLOCK-----
