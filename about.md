@@ -15,6 +15,8 @@ Download my resume [here]({{ site.url }}/assets/resume.pdf)
 
 ## Experience
 
+### Professional
+
 - Intern for Blend Labs on the infrastructure team
 - Research for the Department of Defense for a conceptual virtual reality
 simulation of the
@@ -25,9 +27,9 @@ with [Dr. Joseph M. Rosen](https://engineering.dartmouth.edu/people/faculty/jose
 University Nuclear and Mechanical Engineering Department with Professor Jayasimha
 Atulasimha
 
-### Courses
+### Academic
 
-This is relevant CS coursework I have taken at Dartmouth College.
+This is relevant CS coursework I have taken at Dartmouth College:
 
 - Discrete Math
 - Algorithms
