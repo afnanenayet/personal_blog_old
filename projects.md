@@ -35,8 +35,8 @@ to manage unit testing. Travis CI is used for deployment and testing.
 ## [afnan.io](http://afnan.io)
 
 A personal website/blog powered by Jekyll and Travis CI. Pushing to
-Github triggers a build from Travis, which ensures that the website cans
-build properly. You're looking at it right now!
+Github triggers a build from Travis, which ensures that the website
+builds properly. You're looking at it right now!
 
 ## Matasano Cryptopals Challenge
 
