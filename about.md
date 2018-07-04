@@ -17,15 +17,15 @@ Download my resume [here]({{ site.url }}/assets/documents/resume.pdf)
 
 ### Professional
 
+- Intern at Capital One doing machine learning work with Payments API team
 - Intern for Blend Labs on the infrastructure team
 - Research for the Department of Defense for a conceptual virtual reality
-simulation of the
-[Battle of 73rd Easting](https://en.wikipedia.org/wiki/Battle_of_73_Easting)
-with [Dr. Joseph M. Rosen](https://engineering.dartmouth.edu/people/faculty/joseph-rosen/)
+  simulation of the [Battle of 73rd Easting](https://en.wikipedia.org/wiki/Battle_of_73_Easting) with
+  [Dr. Joseph M. Rosen](https://engineering.dartmouth.edu/people/faculty/joseph-rose)
 - Intern at Microsoft on the Windows core quality team
 - Researched using nanomagnets to replace transistors at Virginia Commonwealth
-University Nuclear and Mechanical Engineering Department with Professor Jayasimha
-Atulasimha
+  University Nuclear and Mechanical Engineering Department with Professor Jayasimha
+  Atulasimha
 
 ### Academic
 
