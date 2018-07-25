@@ -17,6 +17,8 @@ Here's what my editor looks like:
 
 ![neovim rust](/assets/images/nvim_1.png)
 
+I have posted my full neovim configuration on [Github](https://github.com/afnanenayet/nvim-dotfiles)
+
 ## Split up your `init.vim`
 
 I had a horribly long `init.vim` file before. It gets clunky to manage and
@@ -55,6 +57,17 @@ source $HOME/.config/nvim/config/deoplete.vim
 source $HOME/.config/nvim/config/language_client.vim
 source $HOME/.config/nvim/config/keybindings.vim
 ```
+
+_Note_: You can also use a glob pattern to automatically source every file
+in a folder, as such:
+
+```vim
+for f in split(glob('~/.config/nvim/config/*.vim'), '\n')
+    exe 'source' f
+endfor
+```
+
+_Credit_: Thanks to commentor Igor Epstein for this suggestion!
 
 Note that I had to put the `plugins.vim` file first because it contains
 everything pertaining to my package manager, dein, and dein has some
