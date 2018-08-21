@@ -24,16 +24,8 @@ layout: default
     <time>{{ page.date | date_to_string }}</time>
   </span>
   <div class="post-tag">
-    <ul>
-      {% for tag in page.tags %}
-      <li>
-        <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
-          <span>{{ tag }}</span>
-        </a>
-      </li>
-      {% unless forloop.last %}{% endunless %}
-      {% endfor %}
-    </ul>
+    <!-- The tags were ugly and I didn't want to see them, the div 
+    preserves the space between title/content-->
   </div>
 
   {{ content }}

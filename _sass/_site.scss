@@ -39,7 +39,8 @@ body {
     margin: 0.3em 0;
     font-size: 2em;
     line-height: 1.2em;
-    font-weight: 400;
+    font-weight: 300;
+    text-transform: lowercase;
 
     a {
       color: $base-color;
@@ -76,9 +77,9 @@ body {
 .header-small {
   text-align: left;
   margin-bottom: .75rem;
-  font-size: 1.5;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: lowercase;
 
   a {
     color: $base-color;
@@ -286,9 +287,9 @@ body {
         text-transform: lowercase;
 
         a {
-          display: inline-block;
+          display: inline-flex;
           margin: 4px;
-          margin-left: 0px;
+          // margin-left: 0px; // TODO see if this centers everything
           color: $oc-white;
           background-color: $oc-gray-6;
           text-decoration: none;

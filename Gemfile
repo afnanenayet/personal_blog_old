@@ -6,5 +6,5 @@ gem "html-proofer"
 gem "jekyll-seo-tag"
 gem "jekyll-paginate"
 gem "jekyll-admin"
-gem 'github-pages', group: :jekyll_plugins
+gem "github-pages", group: :jekyll_plugins
 
