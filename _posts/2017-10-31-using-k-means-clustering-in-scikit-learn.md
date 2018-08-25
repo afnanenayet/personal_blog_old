@@ -15,7 +15,6 @@ We will examine the traits of the liver dataset so we can understand the relatio
 
 We will begin by importing all of the appropriate Python libraries.
 
-
 ```python
 import pandas as pd
 import sklearn as sk
@@ -31,18 +30,17 @@ Now we will load our `csv` file into a Pandas Dataframe so we can manipulate and
 
 The structure of the data is as follows (also found [here](http://archive.ics.uci.edu/ml/machine-learning-databases/liver-disorders/bupa.names))
 
-   1. mcv: mean corpuscular volume
-   2. alkphos: alkaline phosphotase
-   3. sgpt: alamine aminotransferase
-   4. sgot: aspartate aminotransferase
-   5. gammagt: gamma-glutamyl transpeptidase
-   6. drinks: number of half-pint equivalents of alcoholic beverages drunk per day
-   7. selector  field used to split data into two sets
+1.  mcv: mean corpuscular volume
+2.  alkphos: alkaline phosphotase
+3.  sgpt: alamine aminotransferase
+4.  sgot: aspartate aminotransferase
+5.  gammagt: gamma-glutamyl transpeptidase
+6.  drinks: number of half-pint equivalents of alcoholic beverages drunk per day
+7.  selector field used to split data into two sets
 
 It appears that column 7 is arbitrary.
 
 We can explore the relationship between the data and the number of drinks to see if there's some sort of polynomial relationship or heavy clustering. Right now, we will decide that the number of drinks, whether as some threshold, or some polynomial relationship, is our `y` value
-
 
 ```python
 col_names = [
@@ -59,7 +57,6 @@ raw_data = pd.read_csv("data/liver_data.csv", header=None, names=col_names)
 
 Let's look at the data's attributes. We will start by looking at the first 5 entries.
 
-
 ```python
 print(raw_data.head(5))
 ```
@@ -71,9 +68,7 @@ print(raw_data.head(5))
     3   91       78    34    24       36     0.0    2
     4   87       70    12    28       10     0.0    2
 
-
 The selector column is useless for our purposes, so we will delete that column from the dataset. If we want to split the data, we can do it ourselves with a random split or with `scikit-learn`'s K-fold cross validation functions. We will then look at the dataframe's metadata.
-
 
 ```python
 del raw_data["gt5"]
@@ -92,11 +87,9 @@ raw_data.info()
     dtypes: float64(1), int64(5)
     memory usage: 16.2 KB
 
-
 We will now normalize the data with `L1` normalization. Having different scales for different features can bias the machine learning model and it is generally better to have normalized data for the sake of computation.
 
 We will also make the assumption that the traits present in the dataset have a distribution close to the normal distribution amongst the general population.
-
 
 ```python
 norm_data = normalize(raw_data, norm="l1", axis=0)
@@ -109,7 +102,6 @@ norm_data["drinks"] = m_norm_data["drinks"]
 ```
 
 Scikit-learn returned a `numpy` array. We will convert it back to a Pandas Dataframe and bring back the column headers found in `raw_data`, since they were removed by the normalization function.
-
 
 ```python
 norm_data = pd.DataFrame(columns=raw_data.columns, data=norm_data)
@@ -137,9 +129,7 @@ print(norm_data.info())
     memory usage: 16.2 KB
     None
 
-
 Let's create a correlation matrix and see the correlation values between each attribute
-
 
 ```python
 corr_matrix = norm_data.corr()
@@ -154,13 +144,11 @@ print(corr_matrix)
     gammagt  0.222314  0.133140  0.503435  0.527626  1.000000  0.341224
     drinks   0.312680  0.100796  0.206848  0.279588  0.341224  1.000000
 
-
 ## Generating a model
 
 We can see that the `drinks` column doesn't have a strong correlation with any of the other data points. Regressions will probably not provide good results. We can try to cluster the data into two different groups with K-means clustering using k-fold cross validation, and see how effectively it divides the dataset into groups. We will try several different hyperparameters using `GridSearchCV` in `scikit-learn` to find the best model via ensemble learning.
 
 We will first configure the cross validation split. We are going to use K-fold cross validation with random shuffling (since the data is sorted by drinks). Since we only have 345 data entries, we will keep `k` small, and set `k=3`. We set the random entropy seed so we yield the same results every time this model is generated.
-
 
 ```python
 RAND_STATE=50  # for reproducibility and consistency
@@ -169,7 +157,6 @@ k_fold = KFold(n_splits=folds, shuffle=True, random_state=RAND_STATE)  # setting
 ```
 
 Now we will define the hyperparameters we want iterate through in order to find the best model
-
 
 ```python
 # Dictionary of hyperparameters to iterate through
@@ -194,13 +181,9 @@ ensemble = GridSearchCV(
 
 Now we will fit the estimator to our data employing the methods discussed above.
 
-
 ```python
 ensemble.fit(norm_data)
 ```
-
-
-
 
     GridSearchCV(cv=KFold(n_splits=3, random_state=50, shuffle=True),
            error_score='raise',
@@ -212,10 +195,7 @@ ensemble.fit(norm_data)
            pre_dispatch='2*n_jobs', refit=True, return_train_score=True,
            scoring=None, verbose=0)
 
-
-
 Now, we need to evaluate the effectiveness of the clustering model. This is difficult to do because the `score()` doesn't provide a good metric, since there is no "ground truth" for the model, since it's unlabeled. We can look at the silhoutte score, which shows how close the points are to the center of their clusters (tighter clusters will give us a better score, if the data points are very scattered, this indicates that our clusters are too loose). The values for the score range from `[-1, 1]` and a score of `1` is ideal.
-
 
 ```python
 # Generate labels for data with model with raw data, compute score
@@ -228,13 +208,11 @@ print(ensemble.best_params_)
     0.67850734737
     {'max_iter': 100, 'n_init': 10, 'tol': 1e-07, 'n_clusters': 3}
 
-
 Now we have split our data into clusters, without any knowledge of what the data actually signifies--we don't know what these groups actually consitute. We tried the model with 20 clusters, and got a very good score, but that is probably overfitting and not very generalization (since we only have 345 samples), so we shaved off some of the more extreme possibilities with the grid search, slowly paring down the number of groups as to prevent overfitting and to keep the model useful and generalizable. This left us with the parameters listed above.
 
 Without having any labels, we were able to deduce three interesting groups within our data with a fairly high silhouette score.
 
 If we want to turn this into a binary classification (say to diagnose those with normal livers and those that don't), we simply set `n_clusters=2` to try to divide the data into 2 groups. Let's do that below.
-
 
 ```python
 # hyperparameters to try out for binary classification with KNN
@@ -267,6 +245,4 @@ print(binary_ensemble.best_params_)
     0.639223346286
     {'max_iter': 100, 'tol': 1e-07, 'n_init': 10}
 
-
 We can see that binary classification has a pretty decent score that isn't too much lower than when we divided the data into three groups.
-

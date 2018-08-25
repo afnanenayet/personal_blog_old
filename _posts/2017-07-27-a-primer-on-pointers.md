@@ -10,7 +10,7 @@ comments: true
 A lot of people have trouble grasping manual memory management when they first
 encounter it. The syntax can be a little confusing and debugging can be
 an extremely painful process - whether you have a segfault or Valgrind is
-complaining that you *still* have memory leaks.
+complaining that you _still_ have memory leaks.
 
 Using pointers in C, while a little intimidating at first, is not as difficult
 as most people expect.
@@ -42,7 +42,7 @@ In C, arrays are all contiguous, so every element is next to each other
 in memory. We can represent this in array in memory as such:
 
 | 0x0 | 0x1 | 0x2 | 0x3 | 0x4 |
-| 0   | 1   | 2   | 3   | 4   |
+| 0 | 1 | 2 | 3 | 4 |
 
 We can access the second element in `arr` in two diferent ways:
 
@@ -163,4 +163,3 @@ int main()
 
 This covers some of the basics of allocating and deallocating memory in C.
 Stay tuned for a primer on using GDB/LLDB and Valgrind.
-

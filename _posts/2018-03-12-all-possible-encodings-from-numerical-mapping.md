@@ -24,22 +24,21 @@ For example, `111` has three different mappings:
 
 1.
 
-1 | 1 | 1
---- | --- | ---
-a | a | a
-
+| 1   | 1   | 1   |
+| --- | --- | --- |
+| a   | a   | a   |
 
 2.
 
-11 | 1
---- | ---
-k | a
+| 11  | 1   |
+| --- | --- |
+| k   | a   |
 
 3.
 
-1 | 11
---- | ---
-a | k
+| 1   | 11  |
+| --- | --- |
+| a   | k   |
 
 ## The approach
 
@@ -78,10 +77,10 @@ into recursive subproblems.
 Suppose $$ s $$ is a string, and $$ s_i $$ represents the string from elements
 0 to the $$ i^{th} $$ element.
 
-The number of ways $$ s_i $$ can be interpreted is equal to the number of ways
-$$ s_{i - 1} $$ can be interpreted, unless the last two characters form a letter
-(that is, $$ 0 < s_{i - 1} * 10 + s_{i - 2} \leq 26 $$). Then we have the number
-of ways that $$ s_{i - 1} $$ can be interpreted and all the ways $$ s_{i - 2} $$
+The number of ways $$ s*i $$ can be interpreted is equal to the number of ways
+$$ s*{i - 1} $$ can be interpreted, unless the last two characters form a letter
+(that is, $$ 0 < s*{i - 1} \* 10 + s*{i - 2} \leq 26 $$). Then we have the number
+of ways that $$ s*{i - 1} $$ can be interpreted and all the ways $$ s*{i - 2} $$
 can be interpreted.
 
 In recursion, it's really important to sort of just trust the recursive property.
@@ -121,7 +120,7 @@ this further by memoizing. You may notice that this problem has a very
 familiar structure. We can break it down as such:
 
 Suppose $$ f(x) $$ is the function that returns the number of ways some string
-$$ x $$ can be decoded. Then $$ f(x) = f(x_{n - 1}) + f(x_{n - 2}) $$. Of course,
+$$ x $$ can be decoded. Then $$ f(x) = f(x*{n - 1}) + f(x*{n - 2}) $$. Of course,
 the second part of that statement is conditional, we have to check whether two
 letters can be decoded to a letter (e.g. are they less than or equal to 26),
 but this is very close to the recursive equation for the Fibonacci sequence.

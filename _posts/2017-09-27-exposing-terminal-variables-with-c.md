@@ -126,4 +126,3 @@ haven't ever noticed this before, and I enjoy tinkering with things like
 this. You can see that the address of the executable file is also supplied at
 the end of the stack. After that, the program tries to access restricted
 memory, and segfaults.
-

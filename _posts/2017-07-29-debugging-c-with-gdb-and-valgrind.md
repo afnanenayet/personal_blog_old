@@ -39,6 +39,7 @@ the state of your program. We will examine how to use these programs.
 #### The basics
 
 Both GDB/LLDB provide some basic debugging functions like:
+
 - step next
 - step over
 - continue execution
@@ -63,7 +64,7 @@ line by line inside the function. `finish` is like stepping out - it will contin
 execution until the function of the current line finishes executing/until it
 returns.
 
--------------------------------------------------------------------------------
+---
 
 You can find a reference for these commands (in GDB)
 [here](http://darkdust.net/files/GDB%20Cheat%20Sheet.pdf).
@@ -99,6 +100,7 @@ Try running the code. It seems like it should work. It's simple, it just
 allocates a string and initializes it to `"hello"`.
 
 You can run the code with the following command:
+
 ```
 ./gve
 ```
@@ -333,8 +335,8 @@ Breakpoint 2, main () at gdb_valgrind_example.c:35
 (gdb) p str
 $2 = 0x602420 "hello"
 ```
-We can see that the string now reads "hello". The program has been corrected.
 
+We can see that the string now reads "hello". The program has been corrected.
 
 ### Valgrind
 
@@ -356,8 +358,7 @@ are very helpful for increasing the performance of your C/C++ programs, but this
 particular post will not cover them. The memcheck tool will run your program, display
 output, and display errors as they arise while the program is executing.
 
-The example usage for our program would be `valgrind --tool=memcheck
---leak-check=full`
+The example usage for our program would be `valgrind --tool=memcheck --leak-check=full`
 
 Let's try it
 
@@ -497,4 +498,3 @@ There are some errors, but we fixed the memory leak! I will address these
 errors later or in another blog post.
 
 Happy debugging!
-

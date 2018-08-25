@@ -8,9 +8,9 @@ tags: [neovim, vim, C++, C, dein, plugins]
 category: posts
 ---
 
-*Note*: You can find an updated version of this article [here](http://afnan.io/2018-04-12/my-neovim-development-setup/)
+_Note_: You can find an updated version of this article [here](http://afnan.io/2018-04-12/my-neovim-development-setup/)
 
-------------------------------------------------------------------------------
+---
 
 Vim is an excellent text editor. It's fast and has a light footprint, and tends
 to be installed in most Unix systems you'll come across. You can use it across
@@ -90,21 +90,21 @@ and Dein will remove it for you.
 
 These are the plugins I use for autocompletion:
 
-* [deoplete](https://github.com/Shougo/deoplete.nvim): the actual autocompletion engine. Note that it won't handle
-your C/C++ files on its own. It's just a completion framework, and it will
-need to pull data from somewhere...
-* [clang-complete](https://github.com/Rip-Rip/clang_complete): this is the
-part that actually pulls data from clang to power the autocompletion engine.
-For this, you will need to have LLVM installed, and you will need to specify
-the LLVM installation path
-* [deoplete-rust](https://github.com/sebastianmarkow/deoplete-rust):
-This contains the deoplete completions for the Rust programming language. It
-requires you to download the Rust source code and documentation.
-* [deoplete-jedi](https://github.com/zchee/deoplete-jedi):
-This contains completions for Python using deoplete
-* [vim-polyglot](https://github.com/sheerun/vim-polyglot): a language pack for
-Neovim/Vim which contains rules for many languages. It allows for more robust
-syntax highlighting.
+- [deoplete](https://github.com/Shougo/deoplete.nvim): the actual autocompletion engine. Note that it won't handle
+  your C/C++ files on its own. It's just a completion framework, and it will
+  need to pull data from somewhere...
+- [clang-complete](https://github.com/Rip-Rip/clang_complete): this is the
+  part that actually pulls data from clang to power the autocompletion engine.
+  For this, you will need to have LLVM installed, and you will need to specify
+  the LLVM installation path
+- [deoplete-rust](https://github.com/sebastianmarkow/deoplete-rust):
+  This contains the deoplete completions for the Rust programming language. It
+  requires you to download the Rust source code and documentation.
+- [deoplete-jedi](https://github.com/zchee/deoplete-jedi):
+  This contains completions for Python using deoplete
+- [vim-polyglot](https://github.com/sheerun/vim-polyglot): a language pack for
+  Neovim/Vim which contains rules for many languages. It allows for more robust
+  syntax highlighting.
 
 ## Usage
 
@@ -116,4 +116,3 @@ Using Neovim with these plugins is relatively easy - you just type and autocompl
 suggestions will pop up if deoplete finds a potential match. Using your arrow keys
 to navigate these suggestions can bring up function previews. The repos for these
 plugins contain instructions for customizing the plugins.
-

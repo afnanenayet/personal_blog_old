@@ -38,9 +38,9 @@ is a vector with the recorded features for that observation. We have another vec
 $$ Y $$ that holds the actual observations for $$ X $$, so the $$ i^{th} $$ element
 in $$ Y $$ corresponds to the $$ i^{th} $$ row of $$ X $$.
 
-Our objective is to create some function $$ f $$ in the form $$ f(x) = a_0 + a_1 x $$
+Our objective is to create some function $$ f $$ in the form $$ f(x) = a*0 + a_1 x $$
 that best approximates the data in $$ X $$ and $$ Y $$. This means that we need to
-pick $$ a_0, a_1 $$ such that $$ f $$ best approximates _all_ of the data in $$ X $$.
+pick $$ a_0, a_1 $$ such that $$ f $$ best approximates \_all* of the data in $$ X $$.
 So how do we pick the best $$ a_0, a_1 $$?
 
 ### The loss function
@@ -56,7 +56,7 @@ We define $$ MSE $$ as follows:
 
 $$
 \begin{equation}
-MSE = \frac{1}{n} \sum_{i = 1}^n (y^{(i)} - f(x^{(i)}))^2
+MSE = \frac{1}{n} \sum\_{i = 1}^n (y^{(i)} - f(x^{(i)}))^2
 \end{equation}
 $$
 
@@ -75,9 +75,9 @@ Let us define our loss function $$ L(a) $$ as $$ MSE $$ and find the minimum.
 
 $$
 \begin{align}
-L(a) &= \frac{1}{n} \sum_{i = 1}^n (y^{(i)} - f(x^{(i)}))^2 \\
-L(a) &= \frac{1}{n} \sum_{i = 1}^n (y^{(i)} - (a^T x^{(i)})^2 \\
-L'(a) &= \frac{1}{n} * 2 (y^{(i)} - a^T x^{(i)}) * -x^{(i)} \\
+L(a) &= \frac{1}{n} \sum*{i = 1}^n (y^{(i)} - f(x^{(i)}))^2 \\
+L(a) &= \frac{1}{n} \sum*{i = 1}^n (y^{(i)} - (a^T x^{(i)})^2 \\
+L'(a) &= \frac{1}{n} _ 2 (y^{(i)} - a^T x^{(i)}) _ -x^{(i)} \\
 L'(a) &= -\frac{2}{n} (y^{(i)} - a^T x^{(i)}) x^{(i)} \\
 0 &= -\frac{2}{n} (y^{(i)} - a^T x^{(i)}) x^{(i)}
 \end{align}
@@ -97,13 +97,13 @@ gradient descent has a clever way of incrementing the new $$ a $$ values so
 that every time gradient descent iterates, $$ L(a) $$ is guaranteed to
 decrease.
 
-In gradient descent, take our vector $$ a_t $$ where $$ t $$ is our current
-iteration. With each iteration of gradient descent, we set $$ a_{t+1} $$
+In gradient descent, take our vector $$ a*t $$ where $$ t $$ is our current
+iteration. With each iteration of gradient descent, we set $$ a*{t+1} $$
 equal to some new value as defined below:
 
 $$
 \begin{align}
-a_t &= a_{t-1} - \alpha f(a_{t-1})
+a*t &= a*{t-1} - \alpha f(a\_{t-1})
 \end{align}
 $$
 
@@ -140,4 +140,3 @@ data at a time.
 
 If you're using stochastic gradient descent, you'll want to randomly shuffle
 the data, and perform each iteration on a randomly shuffled mini-batch.
-

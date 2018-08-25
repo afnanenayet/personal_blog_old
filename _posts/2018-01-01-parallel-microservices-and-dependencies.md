@@ -74,7 +74,6 @@ stack, the graph is acyclic.
 
 The pseudocode looks something like this.
 
-
 ```python
 def check(graph):
     visited, unvisited, stack = set(), set(), set()

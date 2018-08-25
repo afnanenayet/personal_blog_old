@@ -166,15 +166,15 @@ Here are some sources/language servers you can use (I've included the
 names of the sources for entries that aren't language servers).
 
 - python:
-    - [deoplete-jedi](https://github.com/zchee/deoplete-jedi) (source) `jedi`
-    - [pyls](https://github.com/palantir/python-language-server) (language server)
+  - [deoplete-jedi](https://github.com/zchee/deoplete-jedi) (source) `jedi`
+  - [pyls](https://github.com/palantir/python-language-server) (language server)
 - rust:
-    - [deoplete-rust](https://github.com/sebastianmarkow/deoplete-rust) (source) `rust`
-    - [rls](https://github.com/rust-lang-nursery/rls/) (language server)
+  - [deoplete-rust](https://github.com/sebastianmarkow/deoplete-rust) (source) `rust`
+  - [rls](https://github.com/rust-lang-nursery/rls/) (language server)
 - C/C++:
-    - [deoplete-clangx](https://github.com/Shougo/deoplete-clangx) (source) `clangx`
-    - [cquery](https://github.com/cquery-project/cquery) (language server) note that I've found this to be the most effective solution for large projects
-    - [clangd](https://clang.llvm.org/extra/clangd.html) (language server) `clang`
+  - [deoplete-clangx](https://github.com/Shougo/deoplete-clangx) (source) `clangx`
+  - [cquery](https://github.com/cquery-project/cquery) (language server) note that I've found this to be the most effective solution for large projects
+  - [clangd](https://clang.llvm.org/extra/clangd.html) (language server) `clang`
 
 ## Other plugins
 
