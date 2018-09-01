@@ -4,14 +4,16 @@ title: About
 permalink: /about/
 ---
 
-My name is Afnan Enayet. I study Computer Science at Dartmouth College and may
-minor in Philosophy. I used to go to the College of William and Mary, then I
-transferred to Dartmouth.
-I'm on the Dartmouth Cycling Team, I play guitar, and I enjoy programming.
+My name is Afnan Enayet. I study Computer Science at Dartmouth College.
+I used to go to the College of William and Mary, then I transferred to
+Dartmouth.
+
+I'm on the Dartmouth Cycling Team, I play guitar, and I love taking pictures.
+Check out my pictures [on Flickr](https://www.flickr.com/photos/150451945@N05/)!
 
 ## Resume
 
-Download my resume [here]({{ site.url }}/assets/documents/resume.pdf)
+Download my résumé [here]({{ site.url }}/assets/documents/resume.pdf)
 
 ## Experience
 
@@ -48,9 +50,9 @@ You can reach me at [me@afnan.io](mailto:me@afnan.io)
 
 ## PGP Key
 
-This is the public PGP key associated with `afnan.enayet@gmail.com`
+This is my public PGP key.
 
-You can also access it at [afnan.io/assets/publickey.asc]({{ site.url }}/assets/publickey.asc)
+You can also access it directly at: [afnan.io/assets/publickey.asc]({{ site.url }}/assets/publickey.asc)
 
 ```txt
 -----BEGIN PGP PUBLIC KEY BLOCK-----
