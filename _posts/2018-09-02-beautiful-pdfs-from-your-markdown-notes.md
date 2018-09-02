@@ -105,3 +105,8 @@ format:
 When I type `make`, my PDFs are generated from markdown files. The
 `make format` command uses a tool called [prettier](https://github.com/prettier/prettier)
 to format my Markdown files.
+
+There are a lot of configurable options both in pandoc and included with the
+latex template that are documented [here](https://pandoc.org/MANUAL.html#variables-for-latex<Paste>) for pandoc and
+[here](https://github.com/Wandmalfarbe/pandoc-latex-template#custom-template-variables)
+for the template.
