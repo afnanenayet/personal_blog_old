@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Beautiful PDFs from Your Markdown Notes"
-description: "A Brief Rundown of my Markdown Note Taking Setup"
+description: "A brief rundown of my markdown note taking setup"
 date: 2018-09-02
 tags: [markdown, pandoc, pdf, latex, eisvogel, academic, paper, note, taking]
 comments: true
