@@ -97,14 +97,14 @@ My makefile looks like this:
 FILES := $(wildcard ./*.md)
 
 all:
-for file in $(FILES); do \
-pandoc $$file -o $(basename $$file).pdf; \
-done
+    for file in $(FILES); do \
+        pandoc $$file -o $(basename -s ".md" $$file).pdf; \
+    done
 
 format:
-for file in $(FILES); do \
-prettier --write --prose-wrap always --print-width 80 $$file; \
-done
+    for file in $(FILES); do \
+        prettier --write --prose-wrap always --print-width 80 $$file; \
+    done
 ```
 
 When I type `make`, my PDFs are generated from markdown files. The
