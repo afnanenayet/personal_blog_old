@@ -21,19 +21,26 @@ Download my résumé [here]({{ site.url }}/assets/documents/resume.pdf)
 
 - Intern at Capital One doing machine learning work with Payments API team
 - Intern for Blend Labs on the infrastructure team
-- Research for the Department of Defense for a conceptual virtual reality
-  simulation of the [Battle of 73rd Easting](https://en.wikipedia.org/wiki/Battle_of_73_Easting) with
-  [Dr. Joseph M. Rosen](https://engineering.dartmouth.edu/people/faculty/joseph-rose)
 - Intern at Microsoft on the Windows core quality team
-- Researched using nanomagnets to replace transistors at Virginia Commonwealth
-  University Nuclear and Mechanical Engineering Department with Professor Jayasimha
-  Atulasimha
 
 ### Academic
 
 #### Works
 
 - [Replacing transistors with nanomagnets for computation (2015)]({{ site.url }}/assets/documents/replacing_transistors_nanomagnets.pdf)
+
+#### Research
+
+- Currently conducting research with [Wojciech Jarosz](https://cs.dartmouth.edu/~wjarosz/)
+  of Dartmouth's [Visual Computing Lab](http://vcl.cs.dartmouth.edu),
+  looking at the potential of strong orthogonal arrays to speed up Monte Carlo
+  rendering.
+- Conducted research with the Department of Defense for a conceptual virtual 
+  reality simulation of the [Battle of 73rd Easting](https://en.wikipedia.org/wiki/Battle_of_73_Easting) with
+  [Dr. Joseph M. Rosen](https://engineering.dartmouth.edu/people/faculty/joseph-rose)
+- Researched using nanomagnets to replace transistors at Virginia Commonwealth
+  University Nuclear and Mechanical Engineering Department with Professor Jayasimha
+  Atulasimha
 
 #### Relevant coursework
 
