@@ -84,7 +84,7 @@ other tools you need to compile your projects.
 In order to do this, you need to manually build LLVM from source and build
 the toolchain.
 
-You can follow this tutorial: https://quuxplusone.github.io/blog/2018/04/16/building-llvm-from-source/
+You can follow [this tutorial](https://quuxplusone.github.io/blog/2018/04/16/building-llvm-from-source/)
 which shows you how to build LLVM from the Github mirrors.
 
 When you get to section 3, change the cmake command slightly so you enable the
