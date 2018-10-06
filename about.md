@@ -11,9 +11,13 @@ Dartmouth.
 I'm on the Dartmouth Cycling Team, I play guitar, and I love taking pictures.
 Check out my pictures [on Flickr](https://www.flickr.com/photos/150451945@N05/)!
 
-## Resume
+## Contact
 
-Download my résumé [here]({{ site.url }}/assets/documents/resume.pdf)
+You can reach me at [afnan@afnan.io](mailto:me@afnan.io).
+
+I use PGP keys to sign and encrypt my emails. My public key is probably
+available on the usual public key servers. You can also access it
+[here](https://afnan.io/assets/publickey.asc).
 
 ## Experience
 
@@ -32,10 +36,9 @@ Download my résumé [here]({{ site.url }}/assets/documents/resume.pdf)
 #### Research
 
 - Currently conducting research with [Wojciech Jarosz](https://cs.dartmouth.edu/~wjarosz/)
-  of Dartmouth's [Visual Computing Lab](http://vcl.cs.dartmouth.edu),
-  looking at the potential of strong orthogonal arrays to speed up Monte Carlo
-  rendering.
-- Conducted research with the Department of Defense for a conceptual virtual 
+  of Dartmouth's [Visual Computing Lab](http://vcl.cs.dartmout.edu) and Pixar,
+  researching potential ways to speed up Monte Carlo rendering.
+- Conducted research with the Department of Defense for a conceptual virtual
   reality simulation of the [Battle of 73rd Easting](https://en.wikipedia.org/wiki/Battle_of_73_Easting) with
   [Dr. Joseph M. Rosen](https://engineering.dartmouth.edu/people/faculty/joseph-rose)
 - Researched using nanomagnets to replace transistors at Virginia Commonwealth
@@ -50,94 +53,4 @@ Download my résumé [here]({{ site.url }}/assets/documents/resume.pdf)
 - Software Development and Implementation (learned C, shell scripting)
 - Machine Learning
 - Rendering Algorithms
-
-## Contact
-
-You can reach me at [me@afnan.io](mailto:me@afnan.io)
-
-## PGP Key
-
-This is my public PGP key.
-
-You can also access it directly at: [afnan.io/assets/publickey.asc]({{ site.url }}/assets/publickey.asc)
-
-```txt
------BEGIN PGP PUBLIC KEY BLOCK-----
-
-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
-vH9hOXL3LVNv7p0MSqCx34Ez29M5SIWb0u52
-=PKQY
------END PGP PUBLIC KEY BLOCK-----
-```
+- Compilers
