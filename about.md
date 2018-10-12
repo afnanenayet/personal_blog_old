@@ -13,7 +13,7 @@ Check out my pictures [on Flickr](https://www.flickr.com/photos/150451945@N05/)!
 
 ## Contact
 
-You can reach me at [afnan@afnan.io](mailto:me@afnan.io).
+You can reach me at [afnan@afnan.io](mailto:afnan@afnan.io).
 
 I use PGP keys to sign and encrypt my emails. My public key is probably
 available on the usual public key servers. You can also access it
@@ -23,6 +23,7 @@ available on the usual public key servers. You can also access it
 
 ### Professional
 
+- Incoming software engineer at Blend Labs on the infrastructure team
 - Intern at Capital One doing machine learning work with Payments API team
 - Intern for Blend Labs on the infrastructure team
 - Intern at Microsoft on the Windows core quality team
