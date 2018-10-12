@@ -13,8 +13,6 @@ worked out autocompletion and linting for all of the languages I work with.
 
 Here's what my editor looks like:
 
-![neovim c++](/assets/images/nvim_0.png)
-
 ![neovim rust](/assets/images/nvim_1.png)
 
 I have posted my full neovim configuration on [Github](https://github.com/afnanenayet/nvim-dotfiles)
