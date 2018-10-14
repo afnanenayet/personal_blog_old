@@ -3,7 +3,7 @@ layout: post
 title: "My Neovim Development Setup"
 description: "An update to my last neovim guide"
 date: 2018-04-12
-tags: [neovim, vim, deoplete, dein, cquery, language, server]
+tags: [neovim, vim, deoplete, dein, cquery, language, server, python, c, c++]
 comments: true
 ---
 
@@ -37,27 +37,15 @@ files split up in the following manner:
 
 ```
 config
-├── deoplete.vim
-├── init.vim
-├── keybindings.vim
-├── language_client.vim
-├── plugins.vim
-└── powerline.vim
+├── 01.plugins.vim
+├── 02.init.vim
+├── 03.powerline.vim
+├── 04.deoplete.vim
+├── 05.language_client.vim
+└── 06.keybindings.vim
 ```
 
 My `init.vim` file looks like this:
-
-```vim
-source $HOME/.config/nvim/config/plugins.vim
-source $HOME/.config/nvim/config/init.vim
-source $HOME/.config/nvim/config/powerline.vim
-source $HOME/.config/nvim/config/deoplete.vim
-source $HOME/.config/nvim/config/language_client.vim
-source $HOME/.config/nvim/config/keybindings.vim
-```
-
-_Note_: You can also use a glob pattern to automatically source every file
-in a folder, as such:
 
 ```vim
 for f in split(glob('~/.config/nvim/config/*.vim'), '\n')
@@ -65,7 +53,8 @@ for f in split(glob('~/.config/nvim/config/*.vim'), '\n')
 endfor
 ```
 
-_Credit_: Thanks to commentor Igor Epstein for this suggestion!
+_Credit: Thanks to Igor Epstein for pointing out I can use a regex
+to grab multiple files in a directory and clean up my init.vim config._
 
 Note that I had to put the `plugins.vim` file first because it contains
 everything pertaining to my package manager, dein, and dein has some
@@ -142,10 +131,15 @@ call deoplete#custom#source('_',
 You can set sources per language like this
 
 ```vim
-let g:deoplete#sources.python = ['LanguageClient']
+call deoplete#custom#option('sources', {
+    \ 'python': ['LanguageClient'],
+\})
 ```
 
-and replace `python` which whatever language you want.
+and replace `python` which whatever language(s) you want.
+
+_Note: thanks to Steve Vermeulen for notifying me about the new convention
+for setting language server settings due to updates from deoplete._
 
 ### Completion sources and language servers
 
@@ -171,8 +165,11 @@ names of the sources for entries that aren't language servers).
   - [rls](https://github.com/rust-lang-nursery/rls/) (language server)
 - C/C++:
   - [deoplete-clangx](https://github.com/Shougo/deoplete-clangx) (source) `clangx`
-  - [cquery](https://github.com/cquery-project/cquery) (language server) note that I've found this to be the most effective solution for large projects
+  - [cquery](https://github.com/cquery-project/cquery) (language server) note
+    that I've found this to be the most effective solution for large projects
   - [clangd](https://clang.llvm.org/extra/clangd.html) (language server) `clang`
+
+I only use language servers for development (except when editing vim files).
 
 ## Other plugins
 
