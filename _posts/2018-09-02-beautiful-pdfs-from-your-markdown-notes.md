@@ -38,7 +38,7 @@ On Linux distributions, you should be able to find pandoc in your package
 manager.
 
 If you want to use bibtex for more elaborate papers, you will need to install
-the `pandas-citeproc` package, which can be found on Homebrew.
+the `pandoc-citeproc` package, which can be found on Homebrew.
 
 ### Eisvogel Template
 
