@@ -5,7 +5,17 @@ title: Projects
 ---
 
 These are personal projects I am working on or have worked on. If you ever have
-questions, please feel free to contact me to ask about them.
+questions, feel free to contact me.
+
+## [pcg-rs](https://github.com/afnanenayet/pcg-rs)
+
+A port of the PCG random number generation library, written in pure Rust.
+
+## [weekend-ray-tracer](https://github.com/afnanenayet/weekend-ray-tracer)
+
+A ray tracer written in Rust, which follows Pete Shirley's book, "Ray Tracing
+in One Weekend." It features multithreading, and (soon to be completed)
+serialization.
 
 ## [ensh](https://github.com/afnanenayet/Enayet-Shell)
 
@@ -26,8 +36,9 @@ A multithreaded HTTP 1.1 server written in C. I wrote this to get a better handl
 on BSD sockets and because I haven't really written any code that deals with
 networking. The server can handle a decent number of mime types, and functions
 as a fairly basic HTTP server. It can receive `GET` requests to a particular path,
-and will serve the file from that path to a browser.
-The server is also multithreaded and can accept multiple connections at once.
+and will serve the file from that path to a browser.  The server is also
+multithreaded (using POSIX threads) and can accept multiple connections at
+once.
 
 `cttp` uses the `pthreads` library and [cmocka](http://cmocka.org)
 to manage unit testing. Travis CI is used for deployment and testing.
