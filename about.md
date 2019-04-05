@@ -55,3 +55,4 @@ available on the usual public key servers. You can also access it
 - Machine Learning
 - Rendering Algorithms
 - Compilers
+- Deep Learning
