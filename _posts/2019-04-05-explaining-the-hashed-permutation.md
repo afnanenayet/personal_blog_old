@@ -63,8 +63,8 @@ hash = (hash << constant) | (hash >> wordsize_constant);
 ```
 
 Of course, you may be a little put off by the constraint that the domain must
-be a power of two, but Kensler shows how we can mitigate that to operate
-within arbitrary domains using cycle walking. Cycle walking is a technique in
+be a power of two, but Kensler shows how we can mitigate that to operate within
+arbitrary domains using cycle walking. Cycle walking is a technique in
 cryptography where you basically just repeatedly encrypt information until it
 falls within an acceptable range. In this case, we can continue applying
 permutations to a number until it falls within the proper range.
@@ -111,8 +111,8 @@ unsigned permute(unsigned i, unsigned l, unsigned p) {
 }
 ```
 
-_This was taken from Kensler's paper, the comments added to explain the function
-signature are mine._
+_This was taken from Kensler's paper, the comments added to explain the
+function signature are mine._
 
 This looks rather daunting, with a lot of bitwise operations, but remember that
 the entire thing is comprised of operations we just discussed are being
@@ -125,8 +125,19 @@ a permuted hash repeatedly until our number is within the domain, which we
 define with `l`. `p` can be more or less treated as a random seed, it lets us
 apply some arbitrary offset which retaining the uniqueness property of a
 permutation. It's fairly self explanatory: apply some offset and modulo it
-within the domain of $$0 \cdots l$$, and because the input domain is the same as
-the output domain, we retain the 1-1 mapping and always get a proper permutation.
+within the domain of $$0 \cdots l$$, and because the input domain is the same
+as the output domain, we retain the 1-1 mapping and always get a proper
+permutation.
+
+You may also be wondering what's going on with `w` operations before the for
+loop. The algorithm takes `i` and returns the greatest number in the domain
+that is less than a power of two. The "actual" domains in this case are powers
+of two, and this operation yields the highest number that falls within that
+domain. So if we have some number $$i$$, find the highest number of two $$x$$
+such that $$i \leq b$$. The code gives us $$b - 1$$. We can also explain this
+in terms of bits. It takes the leftmost bit, and turns all of the bits to the
+right of the bit to `1`. If the number is a power of two, then the leftmost bit
+is flipped to a `0`.
 
 Using this function gives you a very low overhead way to generate particular
 permutations or shuffles on the fly with `O(1)` space and time complexity.
