@@ -269,11 +269,11 @@ pre {
 }
 
 code {
-  padding: 0.25em 0.5em;
-  font-size: 100%;
+  padding: 0.2em 0.2em;
+  font-size: 95%;
   color: $code-color;
   background-color: $code-background-color;
-  border-radius: 2px;
+  border-radius: 1px;
 }
 
 pre {
@@ -281,7 +281,7 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  font-size: .85rem; // TODO? (previously 0.8)
+  font-size: 100%;
   line-height: 1.4;
   white-space: pre;
   overflow: auto;
