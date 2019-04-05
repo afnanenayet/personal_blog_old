@@ -13,7 +13,7 @@ the permutation of an array in his 2013 paper,
 Sampling](https://graphics.pixar.com/library/MultiJitteredSampling/paper.pdf).
 
 Firstly, let's look at the naive way of generating a permutation. You construct
-an array of elements from $0 \cdots n$, and then you randomly shuffle them.
+an array of elements from $$0 \cdots n$$, and then you randomly shuffle them.
 Then, your resulting array (let's call it `A`), will have the permuted value
 for `i` at `A[i]`.
 
@@ -121,11 +121,11 @@ each number will unique map to another number within the smallest power of two
 domain that is larger than `l`.
 
 The body of the function inside of the do-while loop is basically just applying
-a permuted hash repeatedly until our number is less within the domain, which we
+a permuted hash repeatedly until our number is within the domain, which we
 define with `l`. `p` can be more or less treated as a random seed, it lets us
 apply some arbitrary offset which retaining the uniqueness property of a
 permutation. It's fairly self explanatory: apply some offset and modulo it
-within the domain of $0 \cdots l$, and because the input domain is the same as
+within the domain of $$0 \cdots l$$, and because the input domain is the same as
 the output domain, we retain the 1-1 mapping and always get a proper permutation.
 
 Using this function gives you a very low overhead way to generate particular
