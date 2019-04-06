@@ -133,8 +133,8 @@ You may also be wondering what's going on with `w` operations before the for
 loop. The algorithm takes `i` and returns the greatest number in the domain
 that is less than a power of two. The "actual" domains in this case are powers
 of two, and this operation yields the highest number that falls within that
-domain. So if we have some number $$i$$, find the highest number of two $$x$$
-such that $$i \leq b$$. The code gives us $$b - 1$$. We can also explain this
+domain. So if we have some number $$i$$, find the smallest number of two $$x$$
+such that $$i \leq x$$. The code gives us $$x - 1$$. We can also explain this
 in terms of bits. It takes the leftmost bit, and turns all of the bits to the
 right of the bit to `1`. If the number is a power of two, then the leftmost bit
 is flipped to a `0`.
