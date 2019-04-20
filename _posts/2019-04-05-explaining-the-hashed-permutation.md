@@ -3,7 +3,7 @@ layout: post
 title: "A Memory and Space Constant Shuffling Algorithm"
 description: "Andrew Kensler's hashed permutation technique"
 date: 2019-04-05
-tags: []
+tags: ["hash", "permutation", "bit", "twiddling", "tricks", "algorithms"]
 comments: true
 ---
 
@@ -46,9 +46,9 @@ are the same, we have a random shuffling of the input set.
 
 In Kensler's paper, he defines a set of operations that are reversible in any
 domain that is a power of 2. Most of these are trivially reversible, and don't
-forget that shifting a number to the left by one bit simply amounts to squaring
-it, and shifting to the right by one bit is the same as taking the truncated
-square root.
+forget that shifting a number to the left by one bit simply amounts to doubling
+the number, and shifting to the right is the same as dividing the number by
+two.
 
 ```c
 hash ^= constant;
